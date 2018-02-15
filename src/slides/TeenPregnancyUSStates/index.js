@@ -1,4 +1,4 @@
-import React, {Component, View} from 'react';
+import React, {Component} from 'react';
 import L from 'leaflet';
 import StatesData from './../../data/geojson-us-states.js'
 
@@ -10,6 +10,10 @@ export default class TeenPregnancyUSStates extends Component {
       geojson: StatesData.statesData,
       selectedYear: 2015
     };
+
+    console.log(this.state.geojson)
+
+    this.loadMap = this.loadMap.bind(this);
   }
 
   componentDidMount() {
@@ -17,7 +21,6 @@ export default class TeenPregnancyUSStates extends Component {
     console.log('Component did mount')
 
     let geojson = this.state.geojson
-
     let year = this.state.selectedYear
 
     let url = 'http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/usa/?year=' + year
@@ -25,29 +28,30 @@ export default class TeenPregnancyUSStates extends Component {
 
     fetch(url)
     .then(results => {
-      console.log('Fetching data')
       return results.json()
     }).then(
       data => {
-        let json = geojson.features.map(state => {
+        let features = geojson.features
+        let json = features.filter(state => {
           let match = data.filter(dataState => {
             return (dataState.fips === state.id)
           })
-          if (match.length != 1) {
-            return
-          }
+          return (match.length === 1)
+        }).map(state => {
+          let match = data.filter(dataState => {
+            return (dataState.fips === state.id)
+          })
           var properties = state.properties
           properties.density = match[0].birthrate
           state.properties = properties
           return state
         })
 
-        this.setState({'geojson':json})
+        geojson.features = json
+
+        this.setState({'geojson':geojson})
       }
-    )
-
-    this.loadMap()
-
+    ).then(this.loadMap)
   }
 
   loadMap() {
@@ -100,7 +104,6 @@ export default class TeenPregnancyUSStates extends Component {
     }
 
     function style(feature) {
-      console.log(feature)
       return {
         weight: 2,
         opacity: 1,
@@ -111,36 +114,37 @@ export default class TeenPregnancyUSStates extends Component {
       };
     }
 
-    function highlightFeature(e) {
-      var layer = e.target;
+    // function highlightFeature(e) {
+    //   var layer = e.target;
+    //
+    //   layer.setStyle({weight: 5, color: '#666', dashArray: '', fillOpacity: 0.7});
+    //
+    //   if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+    //     layer.bringToFront();
+    //   }
+    //
+    //   // info.update(layer.feature.properties);
+    // }
 
-      layer.setStyle({weight: 5, color: '#666', dashArray: '', fillOpacity: 0.7});
-
-      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
-      }
-
-      // info.update(layer.feature.properties);
-    }
-
-    var geojson;
-
-    function resetHighlight(e) {
-      geojson.resetStyle(e.target);
-      // info.update();
-    }
-
-    function zoomToFeature(e) {
-      map.fitBounds(e.target.getBounds());
-    }
+    // function resetHighlight(e) {
+    //   geojson.resetStyle(e.target);
+    //   // info.update();
+    // }
+    //
+    // function zoomToFeature(e) {
+    //   map.fitBounds(e.target.getBounds());
+    // }
 
     function onEachFeature(feature, layer) {
-      layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
+      // layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
     }
 
+    var geojson
+
     console.log("Initializing map")
-    console.log(this.state.geojson)
-    geojson = L.geoJson(this.state.geojson, {
+    let geojsonData = this.state.geojson
+    console.log(geojsonData)
+    geojson = L.geoJson(geojsonData, {
       style: style,
       onEachFeature: onEachFeature
     }).addTo(map);
