@@ -33,16 +33,14 @@ export default class TeenPregnancyUSWorldwide extends Component {
     }
 
     componentWillMount() {
-        fetch('http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/world')
+        fetch('http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/world/?startYear=2000&endYear=2015')
             .then(results => {
                 return results.json()
             }).then(json => {
-            console.log(json);
             const data = {...this.state.data};
             data.labels = json['year'];
 
             let i = 0;
-
             for (let attribute in json) {
                 if (attribute !== 'year') {
                     data.datasets.push({
@@ -61,8 +59,16 @@ export default class TeenPregnancyUSWorldwide extends Component {
     render() {
         return (
             <div>
-                TeenPregnancyUSWorldwide
-                <Line data={this.state.data} width={100} height={50}/>
+                <div class="container">
+                    <div class="section no-pad-bot">
+                        <div class="container">
+                            <h2 class="header center">Teen Pregnancy Worldwide</h2>
+                        </div>
+                    </div>
+                    <div class="section center">
+                        <Line data={this.state.data}/>
+                    </div>
+                </div>
             </div>
         );
     }
