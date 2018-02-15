@@ -1,0 +1,14 @@
+.trump {
+    background-image: url("trump.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+p {
+    font-size: 25px;
+}
+
+.card {
+      margin-top: 33%;
+}

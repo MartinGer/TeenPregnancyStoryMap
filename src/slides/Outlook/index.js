@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css'
 
 export default class Outlook extends Component {
   constructor(props) {
@@ -9,9 +10,24 @@ export default class Outlook extends Component {
 
   render() {
     return (
-      <div>
-        Outlook
-      </div>
+        <div class="trump">
+                        <div class="row center">
+                            <div class="section col s5 push-s1">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">
+                                       <h4> How will the Teenage Pregnancy rate develop in the future? </h4>
+                                        </span>
+                                    <p>
+                                    The Trump administration has cut nearly $214 million from teen pregnancy prevention programs across the country.
+
+                                    More than 80 organizations will lose Obama-era grants from the US Department of Health and Human Services
+                                    </p>
+                                </div>
+                                </div>
+                        </div>
+                      </div>
+                      </div>
     );
   }
 }

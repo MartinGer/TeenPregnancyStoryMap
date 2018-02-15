@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
+import './index.css'
 
 export default class TeenPregnancyUSWorldwide extends Component {
     constructor(props) {
@@ -78,20 +79,37 @@ export default class TeenPregnancyUSWorldwide extends Component {
     render() {
         return (
             <div>
-                <div class="container">
-                    <div class="section no-pad-bot">
-                        <div class="container">
-                            <h2 class="header center">Teen Pregnancy Worldwide</h2>
-                        </div>
-                    </div>
-                    <div class="section center">
-                        <Line data={this.state.data} options={this.state.options}/>
-
-                    </div>
-                    <div class="section lower">
-                        <p class="text">The United States of America appear to always have higher teen pregnancy rates then other western countries in the European Union. Numbers are decreasing but still staying way over the European average. </p>
-                    </div>
+            <div class="container">
+                <div class="section no-pad-bot">
+                    <h2 class="header center">Teenage Pregnancy Worldwide</h2>
                 </div>
+                <div class="row center">
+                    <div class="section col s8">
+                        <Line data={this.state.data} options={this.state.options} width={250}/>
+                    </div> 
+                    <div class="section col s4">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                                Why are still more teenagers getting pregnant in the US?
+                                </span>
+                            <p>
+                            The United States of America appear to always have had higher teen pregnancy rates then other western countries in the European Union. Numbers are decreasing but still staying way over the European average.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a>What happend in 2007?</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
+                                <i class="material-icons right">close</i></span>
+                        </div>
+                        </div>
+                </div>
+                </div>
+            </div>
             </div>
         );
     }

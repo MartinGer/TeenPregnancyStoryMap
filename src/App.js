@@ -25,35 +25,41 @@ class App extends Component {
 
                         <ScrollSection pageId={1}>
                             <div className='full-height green-background'>
-                                <TeenPregnancyWorldwide/>
+                                <Intro/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={2}>
-                            <div className='full-height yellow-background'>
-                                <TeenPregnancyUSStates/>
+                            <div className='full-height green-background'>
+                                <TeenPregnancyWorldwide/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={3}>
                             <div className='full-height yellow-background'>
-                                <ReligionUSStates/>
+                                <TeenPregnancyUSStates/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={4}>
                             <div className='full-height yellow-background'>
-                                <FundingChart/>
+                                <ReligionUSStates/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={5}>
                             <div className='full-height yellow-background'>
-                                <FundingOnStateLevel/>
+                                <FundingChart/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={6}>
+                            <div className='full-height yellow-background'>
+                                <FundingOnStateLevel/>
+                            </div>
+                        </ScrollSection>
+
+                        <ScrollSection pageId={7}>
                             <div className='full-height yellow-background'>
                                 <Outlook/>
                             </div>
