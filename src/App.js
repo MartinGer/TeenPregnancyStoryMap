@@ -25,41 +25,35 @@ class App extends Component {
 
                         <ScrollSection pageId={1}>
                             <div className='full-height green-background'>
-                                <Intro/>
-                            </div>
-                        </ScrollSection>
-
-                        <ScrollSection pageId={2}>
-                            <div className='full-height green-background'>
                                 <TeenPregnancyWorldwide/>
                             </div>
                         </ScrollSection>
 
-                        <ScrollSection pageId={3}>
+                        <ScrollSection pageId={2}>
                             <div className='full-height yellow-background'>
                                 <TeenPregnancyUSStates/>
                             </div>
                         </ScrollSection>
 
-                        <ScrollSection pageId={4}>
+                        <ScrollSection pageId={3}>
                             <div className='full-height yellow-background'>
                                 <ReligionUSStates/>
                             </div>
                         </ScrollSection>
 
-                        <ScrollSection pageId={5}>
+                        <ScrollSection pageId={4}>
                             <div className='full-height yellow-background'>
                                 <FundingChart/>
                             </div>
                         </ScrollSection>
 
-                        <ScrollSection pageId={6}>
+                        <ScrollSection pageId={5}>
                             <div className='full-height yellow-background'>
                                 <FundingOnStateLevel/>
                             </div>
                         </ScrollSection>
 
-                        <ScrollSection pageId={7}>
+                        <ScrollSection pageId={6}>
                             <div className='full-height yellow-background'>
                                 <Outlook/>
                             </div>
