@@ -118,7 +118,7 @@ export default class TeenPregnancyUSStates extends Component {
 
     info.update = function(props) {
       console.log("info.update")
-      this._div.innerHTML = '<h5>US Teenage Pregnancy per State</h5>' + (
+      this._div.innerHTML = (
         props
         ? '<b>' + props.name + '</b><br />' + props.density + ' births per 1000 women between 15 and 19 years'
         : 'Hover over a state');
@@ -180,7 +180,9 @@ export default class TeenPregnancyUSStates extends Component {
 
     function onEachFeature(feature, layer) {
       console.log("onEachFeature")
-      layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
+      // layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
+
+      layer.bindTooltip('Some tooltip')
     }
 
     /**
