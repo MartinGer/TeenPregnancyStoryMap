@@ -25,8 +25,19 @@ export default class FundingChart extends Component {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Funding for Sexual Education in $'
-                    }
+                        labelString: 'Funding for Sexual Education in $',
+                        position: 'left'
+                    },
+                    id: 'y-funding'
+                }, {
+                    type: 'linear',
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Births per 1000 teenagers 13-19'
+                    },
+                    position: 'right',
+                    id: 'y-birthrate'
                 }]
             }
         };
@@ -46,7 +57,8 @@ export default class FundingChart extends Component {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(50, 50, 50, 1)'
             ]
         };
 
@@ -57,21 +69,29 @@ export default class FundingChart extends Component {
         this.loadState('01');
     }
 
-    displayY(y) {
+    displayXLabel(labels) {
         const data = {...this.state.data};
 
-        data.labels = y;
+        data.labels = labels;
         this.setState({data: data});
     }
 
-    displayX(x, xLabel, color, isFill) {
+    displayX(x, label, color, isFill, isDashed, yAxis) {
         const data = {...this.state.data};
+        let dashed = [];
+
+        if (isDashed) {
+            dashed = [5, 5]
+        }
+
         data.datasets.push({
-            label: xLabel,
+            label: label,
             fill: isFill,
             lineTension: 0.1,
             borderColor: this.colors.borderColor[color],
-            data: x
+            data: x,
+            borderDash: dashed,
+            yAxisID: yAxis
         });
 
         this.setState({data: data});
@@ -91,15 +111,16 @@ export default class FundingChart extends Component {
             .then(results => {
                 return results.json()
             }).then(json => {
-            this.clear()
+            this.clear();
 
             for (let fips in json) {
                 let state = json[fips];
 
-                this.displayY(state['year']);
-                this.displayX(state['abstinence only'], 'abstinence only', 0, false);
-                this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false);
-                this.displayX(state['total'], 'total', 2, true);
+                this.displayXLabel(state['year']);
+                this.displayX(state['abstinence only'], 'abstinence only', 0, false, false, "y-funding");
+                this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false, false, "y-funding");
+                this.displayX(state['total'], 'total', 2, true, false, "y-funding");
+                this.displayX(state['birthrate'], 'birth rate', 6, false, true, "y-birthrate");
             }
         })
     }
@@ -137,7 +158,7 @@ export default class FundingChart extends Component {
                             <div class="card-action">
                                 <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
                                 <a href="#" onClick={() => this.loadState('02')}>Utah</a>
-                                <a href="#" onClick={() => this.loadState('04')}>California</a>
+                                <a href="#" onClick={() => this.loadState('11')}>California</a>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
