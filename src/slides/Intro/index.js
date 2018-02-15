@@ -11,38 +11,27 @@ export default class Intro extends Component {
   render() {
         return (
             <div class="Intro">
+           
                 <div class="container">
-                    <div class="center">
-                        <div class="card sticky-action col s12">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
-                            </div>
+                <div class="containerIntro">
+                        <div class="card sticky-action col s12">  
+
+                         
                             <div class="card-content">
+                           
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Teenage Pregnancy in the USA and factors influencing its occurence
-                                    <i class="material-icons right">more_vert</i></span>
+                                    Teenage Pregnancy in the USA and factors influencing its occurence</span>
                                 <p>
                                     We want to have a look on pregnant teenage girls of the age of 15 to 19 
                                     whereby those normally haven’t completed their core education—secondary 
                                     school—have few or no marketable skills, are financially dependent upon 
                                     her parents and/or continue to live at home. Often they are no mentally 
                                     mature enough to raise a child on their own, which leads to problems for 
-                                    the mother as well as for the child. In the following the 3 
-                                    
+                                    the mother as well as for the child. In the following the 3                 
                                 </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="#" onClick={() => this.loadState('01')}>Educational Problems</a>
-                                <a href="#" onClick={() => this.loadState('11')}>Health issues</a>
-                                <a href="#" onClick={() => this.loadState('39')}>Direct financially</a>
-                                <a href="#" onClick={() => this.loadState('39')}>Socially</a>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Teenage Pregnancy in the USA and factors influencing its occurence
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    Sources...
-                                </p>
+                                <span class="card-title grey-text text-darken-4">Teenage Pregnancy in the USA and factors influencing its occurence</span>
                             </div>
                         </div>
                     </div>
@@ -53,94 +42,68 @@ export default class Intro extends Component {
                     <div class="row center">
                         <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Educational Issues
-                                    <i class="material-icons right">more_vert</i></span>
-                                <p>
-                                  only 40% finish high school degree
-                                  college completion reduced by 65%
-                                </p>
+                                    Educational Issues</span>                     
+                                <p> - only 40% finish high school degree </p>
+                                <p> - college completion reduced by 65% </p>    
+                                <p> </p>                      
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Educational problems
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    
-                                </p>
+                                <span class="card-title grey-text text-darken-4">Educational problems</span>
                             </div>
                         </div>
 
                         <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Health issues
-                                    <i class="material-icons right">more_vert</i></span>
-                                <p>
-                                    high risk of anaemia & blood pressure
-                                    premature birth and depression
-                                </p>
+                                    Health Issues</span>
+                                
+                                <p> - high risk of anaemia & blood pressure</p>
+                                <p> - premature birth and depression</p>
+                                
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    Sources...
-                                </p>
+                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
                             </div>
                         </div>
 
                         <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Direct financial
-                                    <i class="material-icons right">more_vert</i></span>
-                                <p>
-                                    medical care for mother & child
-                                    child care and baby accessories
-                                </p>
+                                    Financial Issues</span>
+                        
+                                <p>   - medical care for mother & child </p>
+                                <p>   - child care and baby accessories </p>
+                                <p> </p>  
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    Sources...
-                                </p>
+                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
                             </div>
                         </div>
 
                         <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Social Issues
-                                    <i class="material-icons right">more_vert</i></span>
-                                <p>
-                                  self-identity develop suffers
-                                  strained relationships with parents & friends
+                                    Social Issues</span>
+                                <p>  - self-identity develop suffers </p>      
+                                <p> - strained relationships with parents & friends
                                 </p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    Sources...
-                                </p>
+                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
         );
   }
 }
