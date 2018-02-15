@@ -148,12 +148,11 @@ export default class FundingChart extends Component {
                         </div>
                         <div class="card sticky-action col s4">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <p></p>
+                            
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Abstinence-Only vs Comprehensive
-                                    <i class="material-icons right">more_vert</i></span>
+                                   <h4> Abstinence-Only vs Comprehensive</h4></span>
                                 <p>
                                     In an effort to reduce teenage pregnancy rates the U.S. government has funded
                                     abstinence-only sex education programs for more than a decade.

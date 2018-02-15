@@ -93,11 +93,11 @@ export default class TeenPregnancyUSWorldwide extends Component {
                         </div>
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                Why are still more teenagers getting pregnant in the US?
+                                <h4>Why are still more teenagers getting pregnant in the US?</h4>
                                 </span>
-                            <p>
+                            <h5>
                             The United States of America appear to always have had higher teen pregnancy rates then other western countries in the European Union. Numbers are decreasing but still staying way over the European average.
-                            </p>
+                            </h5>
                         </div>
                         <div class="card-action">
                             <a>What happend in 2007?</a>
