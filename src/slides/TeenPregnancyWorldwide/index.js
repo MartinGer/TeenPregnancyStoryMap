@@ -5,12 +5,10 @@ import './index.css'
 export default class TeenPregnancyUSWorldwide extends Component {
     constructor(props) {
         super(props);
-
         const data = {
             labels: [],
             datasets: []
         };
-
         const options = {
             scales: {
                 xAxes: [{
@@ -29,7 +27,6 @@ export default class TeenPregnancyUSWorldwide extends Component {
                 }]
             }
         };
-
         this.colors = {
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -48,7 +45,6 @@ export default class TeenPregnancyUSWorldwide extends Component {
                 'rgba(255, 159, 64, 1)'
             ]
         };
-
         this.state = {data: data, options: options};
     }
 
@@ -59,7 +55,6 @@ export default class TeenPregnancyUSWorldwide extends Component {
             }).then(json => {
             const data = {...this.state.data};
             data.labels = json['year'];
-
             let i = 0;
             for (let attribute in json) {
                 if (attribute !== 'year') {
@@ -79,29 +74,39 @@ export default class TeenPregnancyUSWorldwide extends Component {
     render() {
         return (
             <div>
-            <div class="container">
-                <div class="section no-pad-bot">
-                    <h2 class="header center">Teenage Pregnancy Worldwide</h2>
-                </div>
-                <div class="row center">
-                    <div class="section col s8">
-                        <Line data={this.state.data} options={this.state.options} width={250}/>
-                    </div> 
-                    <div class="section col s4">
-                    <div class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
+                <div class="container">
+                    <div class="section no-pad-bot">
+                        <h2 class="header center">Teenage Pregnancy Worldwide</h2>
+                    </div>
+                    <div class="row center">
+                        <div class="section col s8">
+                            <Line data={this.state.data} options={this.state.options} width={250}/>
+                        </div>
+                        <div class="section col s4">
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">
+                                        <h5>What is influencing the US teen pregnancy rate?</h5>
+                                    </span>
+                                    <p class="section">
+                                        The United States of America appear to always have had higher teen pregnancy
+                                        rates then other western countries in the European Union. Numbers are decreasing
+                                        but still staying way over the European average.
+                                    </p>
+                                    <div class="card-action">
+                                        <a>What happend in 2007?</a>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
+                                            <i class="material-icons right">close</i></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="section center">
-                        <Line data={this.state.data} options={this.state.options}/>
-
-                    </div>
-                    <div class="section lower">
-                        <p class="text">The United States of America appear to always have higher teen pregnancy rates then other western countries in the European Union. Numbers are decreasing but still staying way over the European average. </p>
-                    </div>
                 </div>
-                </div>
-            </div>
             </div>
         );
     }
