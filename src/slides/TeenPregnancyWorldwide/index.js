@@ -10,6 +10,25 @@ export default class TeenPregnancyUSWorldwide extends Component {
             datasets: []
         };
 
+        const options = {
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Years'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Births per 1000 teenagers 13-19'
+                    }
+                }]
+            }
+        };
+
         this.colors = {
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -29,7 +48,7 @@ export default class TeenPregnancyUSWorldwide extends Component {
             ]
         };
 
-        this.state = {data: data};
+        this.state = {data: data, options: options};
     }
 
     componentWillMount() {
@@ -66,7 +85,7 @@ export default class TeenPregnancyUSWorldwide extends Component {
                         </div>
                     </div>
                     <div class="section center">
-                        <Line data={this.state.data}/>
+                        <Line data={this.state.data} options={this.state.options}/>
                     </div>
                 </div>
             </div>
