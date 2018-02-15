@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css'
 
 export default class ReligionUSStates extends Component {
   constructor(props) {
@@ -9,11 +10,9 @@ export default class ReligionUSStates extends Component {
 
   render() {
     return (
-      <div>
+      <div class = "Religion">
       <div class="container">
-          <div class="section no-pad-bot">
-              <h2 class="header center">Religion</h2>
-          </div>
+      <div class ="box_religion2010">
               <div class="section col s4">
               <div class="card">
                   <div class="card-image waves-effect waves-block waves-light">
@@ -25,13 +24,14 @@ export default class ReligionUSStates extends Component {
                       </h5>
                   </div>
                   <div class="card-action">
-                      <a>What happend in 2007?</a>
+                      <a>Does religion impact teenage pregnancy?</a>
                   </div>
                   <div class="card-reveal">
                       <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
                           <i class="material-icons right">close</i></span>
                   </div>
                   </div>
+          </div>
           </div>
           </div>
       </div>
