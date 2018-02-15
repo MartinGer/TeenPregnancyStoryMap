@@ -1,0 +1,11 @@
+.Intro {
+    background-image: url("backgroundIntro.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.containerIntro {
+    padding-top: 15%;
+}
+
