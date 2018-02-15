@@ -53,7 +53,7 @@ export default class TeenPregnancyUSStates extends Component {
     render() {
         return (
             <div class="container center">
-                <h4>US Teen Pregnancy in {this.state.year}</h4>
+                <h4>US Teen Pregnancy per State in {this.state.year}</h4>
                 <div class="container center">
                     <Chart
                         chartType="GeoChart"
@@ -64,7 +64,8 @@ export default class TeenPregnancyUSStates extends Component {
                         width={"1000px"}
                         height={"600px"}/>
                 </div>
-                <Slider step={1} value={this.state.year} min={2003} max={2016} onChange={_.debounce(this.handleSlider, 200)}/>
+                <Slider step={1} value={this.state.year} min={2003} max={2016}
+                        onChange={_.debounce(this.handleSlider, 200)}/>
             </div>
         );
     }
