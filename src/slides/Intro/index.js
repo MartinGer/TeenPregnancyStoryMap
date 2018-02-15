@@ -27,7 +27,7 @@ export default class Intro extends Component {
                                     school—have few or no marketable skills, are financially dependent upon 
                                     her parents and/or continue to live at home. Often they are no mentally 
                                     mature enough to raise a child on their own, which leads to problems for 
-                                    the mother as well as for the child. In the following the 3                 
+                                    the mother as well as for the child.   
                                 </p>
                             </div>
                             <div class="card-reveal">
@@ -36,7 +36,7 @@ export default class Intro extends Component {
                         </div>
                     </div>
                     <div class="section no-pad-bot">
-                        <h3 class="center">Effects of Teen Pregnancy</h3>
+                        <h3 class="center"></h3>
                     </div>
 
                     <div class="row center">
@@ -46,7 +46,7 @@ export default class Intro extends Component {
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
                                     Educational Issues</span>                     
-                                <p> - only 40% finish high school degree </p>
+                                <p> - only 40% finish their high school degrees </p>
                                 <p> - college completion reduced by 65% </p>    
                                 <p> </p>                      
                             </div>
@@ -78,7 +78,7 @@ export default class Intro extends Component {
                                 <span class="card-title activator grey-text text-darken-4">
                                     Financial Issues</span>
                         
-                                <p>   - medical care for mother & child </p>
+                                <p>   - medical care for mother and her child </p>
                                 <p>   - child care and baby accessories </p>
                                 <p> </p>  
                             </div>
@@ -93,12 +93,9 @@ export default class Intro extends Component {
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
                                     Social Issues</span>
-                                <p>  - self-identity develop suffers </p>      
+                                <p> - suffering of self-identity development</p>      
                                 <p> - strained relationships with parents & friends
                                 </p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
                             </div>
                         </div>
                     </div>
