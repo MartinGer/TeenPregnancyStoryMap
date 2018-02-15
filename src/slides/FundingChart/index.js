@@ -25,7 +25,7 @@ export default class FundingChart extends Component {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Births per 1000 teenagers 13-19'
+                        labelString: 'Funding for Sexual Education in $'
                     }
                 }]
             }
@@ -54,19 +54,7 @@ export default class FundingChart extends Component {
     }
 
     componentWillMount() {
-        fetch('http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/funding/?state=01')
-            .then(results => {
-                return results.json()
-            }).then(json => {
-            for (let fips in json) {
-                let state = json[fips];
-
-                this.displayY(state['year']);
-                this.displayX(state['abstinence only'], 'abstinence only', 0, false);
-                this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false);
-                this.displayX(state['total'], 'total', 2, true);
-            }
-        })
+        this.loadState('01');
     }
 
     displayY(y) {
@@ -89,17 +77,76 @@ export default class FundingChart extends Component {
         this.setState({data: data});
     }
 
+    clear() {
+        this.setState({
+            data: {
+                labels: [],
+                datasets: []
+            }
+        });
+    }
+
+    loadState(state) {
+        fetch('http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/funding/?state=' + state)
+            .then(results => {
+                return results.json()
+            }).then(json => {
+            this.clear()
+
+            for (let fips in json) {
+                let state = json[fips];
+
+                this.displayY(state['year']);
+                this.displayX(state['abstinence only'], 'abstinence only', 0, false);
+                this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false);
+                this.displayX(state['total'], 'total', 2, true);
+            }
+        })
+    }
+
     render() {
         return (
             <div>
                 <div class="container">
                     <div class="section no-pad-bot">
-                        <div class="container">
-                            <h2 class="header center">Sex Education Funding</h2>
-                        </div>
+                        <h2 class="header center">Sexual Education</h2>
                     </div>
-                    <div class="section center">
-                        <Line data={this.state.data} options={this.state.options}/>
+                    <div class="row center">
+                        <div class="section col s8">
+                            <Line data={this.state.data} options={this.state.options} height={50} width={66}/>
+                        </div>
+                        <div class="card sticky-action col s4">
+                            <div class="card-image waves-effect waves-block waves-light">
+                                <p></p>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">
+                                    Abstinence-Only vs Comprehensive
+                                    <i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    In an effort to reduce teenage pregnancy rates the U.S. government has funded
+                                    abstinence-only sex education programs for more than a decade.
+                                    Abstinence-only sex education is a form of sex education that teaches not having sex
+                                    outside of marriage.
+                                    It often exclude other types of reproductive health education e.g. birth control and
+                                    safe sex an.
+                                    In contrast comprehensive sex education covers the use of birth control, safe sexual
+                                    practices and usage of contraception, such as condoms, as well as sexual abstinence.
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
+                                <a href="#" onClick={() => this.loadState('02')}>Utah</a>
+                                <a href="#" onClick={() => this.loadState('04')}>California</a>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
+                                    <i class="material-icons right">close</i></span>
+                                <p>
+                                    Sources...
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
