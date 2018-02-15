@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, View} from 'react';
 import L from 'leaflet';
 import StatesData from './../../data/geojson-us-states.js'
 
@@ -6,11 +6,48 @@ export default class TeenPregnancyUSStates extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      geojson: StatesData.statesData,
+      selectedYear: 2015
+    };
   }
 
   componentDidMount() {
+
+    console.log('Component did mount')
+
+    let geojson = this.state.geojson
+
+    let year = this.state.selectedYear
+
+    let url = 'http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/usa/?year=' + year
+    console.log(url)
+
+    fetch(url)
+    .then(results => {
+      console.log('Fetching data')
+      return results.json()
+    }).then(
+      data => {
+        let json = geojson.features.map(state => {
+          let match = data.filter(dataState => {
+            return (dataState.fips === state.id)
+          })
+          if (match.length != 1) {
+            return
+          }
+          var properties = state.properties
+          properties.density = match[0].birthrate
+          state.properties = properties
+          return state
+        })
+
+        this.setState({'geojson':json})
+      }
+    )
+
     this.loadMap()
+
   }
 
   loadMap() {
@@ -26,22 +63,22 @@ export default class TeenPregnancyUSStates extends Component {
     }).addTo(map);
 
     // control that shows state info on hover
-    var info = L.control();
-
-    info.onAdd = function(map) {
-      this._div = L.DomUtil.create('div', 'info');
-      this.update();
-      return this._div;
-    };
-
-    info.update = function(props) {
-      this._div.innerHTML = '<h4>US Population Density</h4>' + (
-        props
-        ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-        : 'Hover over a state');
-    };
-
-    info.addTo(map);
+    // var info = L.control();
+    //
+    // info.onAdd = function(map) {
+    //   this._div = L.DomUtil.create('div', 'info');
+    //   this.update();
+    //   return this._div;
+    // };
+    //
+    // info.update = function(props) {
+    //   this._div.innerHTML = '<h4>US Population Density</h4>' + (
+    //     props
+    //     ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+    //     : 'Hover over a state');
+    // };
+    //
+    // info.addTo(map);
 
     // get color depending on population density value
     function getColor(d) {
@@ -63,6 +100,7 @@ export default class TeenPregnancyUSStates extends Component {
     }
 
     function style(feature) {
+      console.log(feature)
       return {
         weight: 2,
         opacity: 1,
@@ -82,14 +120,14 @@ export default class TeenPregnancyUSStates extends Component {
         layer.bringToFront();
       }
 
-      info.update(layer.feature.properties);
+      // info.update(layer.feature.properties);
     }
 
     var geojson;
 
     function resetHighlight(e) {
       geojson.resetStyle(e.target);
-      info.update();
+      // info.update();
     }
 
     function zoomToFeature(e) {
@@ -100,12 +138,14 @@ export default class TeenPregnancyUSStates extends Component {
       layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
     }
 
-    geojson = L.geoJson(StatesData.statesData, {
+    console.log("Initializing map")
+    console.log(this.state.geojson)
+    geojson = L.geoJson(this.state.geojson, {
       style: style,
       onEachFeature: onEachFeature
     }).addTo(map);
 
-    map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+    map.attributionControl.addAttribution('BirthRates');
 
     var legend = L.control({position: 'bottomright'});
 
@@ -164,20 +204,14 @@ export default class TeenPregnancyUSStates extends Component {
   }
 
   render() {
-
-    // return (
-    //   <div>
-    //     TeenPregnancyUSStates
-    //   </div>
-    // )
     return (
       <div>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
         <div id="mapUI">
-          <div ref={(node) => this._mapNode = node} id="map">
-            <h2>Year</h2>
+          <div ref={(node) => this._mapNode = node} id="map" style={{height: 500, width: 900}}>
+            {/* <h2>Year</h2>
             <label id='month'></label>
-            <input id='slider' type='range' min='2003' max='2017' step='1' value='2003'/>
+            <input id='slider' type='range' min='2003' max='2017' step='1' value='2003'/> */}
           </div>
         </div>
       </div>
