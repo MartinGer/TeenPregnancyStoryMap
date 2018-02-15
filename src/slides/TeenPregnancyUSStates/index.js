@@ -9,6 +9,8 @@ export default class TeenPregnancyUSStates extends Component {
 
   constructor(props) {
     super(props);
+
+    this.map
     this.state = {
       geojson: StatesData.statesData,
       selectedYear: 2015,
@@ -32,14 +34,9 @@ export default class TeenPregnancyUSStates extends Component {
     };
 
     console.log(this.state.geojson)
-
-    this.loadMap = this.loadMap.bind(this);
+    this.loadMap = this.loadMap.bind(this)
     this.fetchData = this.fetchData.bind(this)
-  }
-
-  componentWillMount() {
-    let year = this.state.selectedYear
-    this.fetchData(year)
+    this.initializeMap = this.initializeMap.bind(this)
   }
 
   fetchData(year) {
@@ -76,20 +73,31 @@ export default class TeenPregnancyUSStates extends Component {
 
   componentDidMount() {
     console.log('Component did mount')
-    this.loadMap()
+    let year = this.state.selectedYear
+    this.map = this.initializeMap()
+    this.fetchData(year)
+
+    this.loadMap(this.map)
   }
 
-  loadMap() {
-    // initialize the map
+  initializeMap() {
     var map = L.map('map').setView([37.8, -96], 4);
-    var geojson;
-
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' + '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' + 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'mapbox.light'
     }).addTo(map);
 
+    return map
+  }
+
+  loadMap(map) {
+    // initialize the map
+    map.eachLayer(function (layer) {
+        map.removeLayer(layer);
+    });
+
+    var geojson;
     geojson = L.geoJson(this.state.geojson, {
       style: style,
       onEachFeature: onEachFeature
@@ -117,6 +125,7 @@ export default class TeenPregnancyUSStates extends Component {
     };
 
     info.addTo(map);
+
 
     /**
      * Setting color scheme
@@ -203,8 +212,7 @@ export default class TeenPregnancyUSStates extends Component {
 
   handleSlider = (event, value) => {
     console.log("handle slider" + value)
-    // this.setState({slider: transform(value)});
-    this.fetchData(value)
+    this.setState({selectedYear: value});
   }
 
   render() {
