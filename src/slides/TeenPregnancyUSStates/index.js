@@ -2,6 +2,7 @@ import React, {Component, View} from 'react';
 import L from 'leaflet';
 import StatesData from './../../data/geojson-us-states.js'
 import Slider from 'material-ui/Slider';
+import './index.css';
 
 
 export default class TeenPregnancyUSStates extends Component {
@@ -36,6 +37,11 @@ export default class TeenPregnancyUSStates extends Component {
     this.fetchData = this.fetchData.bind(this)
   }
 
+  componentWillMount() {
+    let year = this.state.selectedYear
+    this.fetchData(year)
+  }
+
   fetchData(year) {
     let geojson = this.state.geojson
     let url = 'http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/usa/?year=' + year
@@ -63,27 +69,20 @@ export default class TeenPregnancyUSStates extends Component {
         })
 
         geojson.features = json
-
         this.setState({'geojson':geojson})
       }
     )
   }
 
   componentDidMount() {
-
     console.log('Component did mount')
-    let year = this.state.selectedYear
-
-    this.fetchData(year)
-
     this.loadMap()
   }
 
   loadMap() {
     // initialize the map
-    var map = L.map('map').setView([
-      37.8, -96
-    ], 4);
+    var map = L.map('map').setView([37.8, -96], 4);
+    var geojson;
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
@@ -91,41 +90,44 @@ export default class TeenPregnancyUSStates extends Component {
       id: 'mapbox.light'
     }).addTo(map);
 
-    // control that shows state info on hover
+    geojson = L.geoJson(this.state.geojson, {
+      style: style,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+
+
+    /**
+     * Info Box
+    **/
     var info = L.control();
 
     info.onAdd = function(map) {
+      console.log("info.onAdd")
       this._div = L.DomUtil.create('div', 'info');
       this.update();
       return this._div;
     };
 
     info.update = function(props) {
-      this._div.innerHTML = '<h4>US Population Density</h4>' + (
+      console.log("info.update")
+      this._div.innerHTML = '<h5>US Teenage Pregnancy per State</h5>' + (
         props
-        ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+        ? '<b>' + props.name + '</b><br />' + props.density + ' births per 1000 women between 15 and 19 years'
         : 'Hover over a state');
     };
 
     info.addTo(map);
 
-    // get color depending on population density value
+    /**
+     * Setting color scheme
+    **/
     function getColor(d) {
-      return d > 50
-        ? '#800026'
-        : d > 40
-          ? '#BD0026'
-          : d > 30
-            ? '#E31A1C'
-            : d > 20
-              ? '#FC4E2A'
-              : d > 10
-                ? '#FD8D3C'
-                : d > 20
-                  ? '#FEB24C'
-                  : d > 10
-                    ? '#FED976'
-                    : '#FFEDA0';
+      return d > 35 ? '#800026' :
+             d > 30 ? '#BD0026' :
+             d > 25 ? '#E31A1C' :
+             d > 20 ? '#FC4E2A' :
+             d > 15 ? '#FD8D3C' :
+                      '#FFEDA0';
     }
 
     function style(feature) {
@@ -138,6 +140,10 @@ export default class TeenPregnancyUSStates extends Component {
         fillColor: getColor(feature.properties.density)
       };
     }
+
+    /**
+     * Adding interaction
+    **/
 
     function highlightFeature(e) {
       var layer = e.target;
@@ -164,27 +170,18 @@ export default class TeenPregnancyUSStates extends Component {
       layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
     }
 
-    var geojson = L.geoJson(this.state.geojson, {
-      style: style,
-      onEachFeature: onEachFeature
-    }).addTo(map);
+    /**
+     * Legend Box
+    **/
 
-    map.attributionControl.addAttribution('BirthRates');
-
+    // map.attributionControl.addAttribution('BirthRates');
 
     var legend = L.control({position: 'bottomright'});
 
     legend.onAdd = function(map) {
 
       var div = L.DomUtil.create('div', 'info legend'),
-        grades = [
-          0,
-          10,
-          20,
-          30,
-          40,
-          50
-        ],
+        grades = [0, 10, 20, 30, 40, 50],
         labels = [],
         from,
         to;
@@ -193,10 +190,8 @@ export default class TeenPregnancyUSStates extends Component {
         from = grades[i];
         to = grades[i + 1];
 
-        labels.push('<i style="background:' + getColor(from + 1) + '"></i> ' + from + (
-          to
-          ? '&ndash;' + to
-          : '+'));
+        labels.push('<i style="background:' + getColor(from + 1) + '"></i> '
+        + from + (to ? '&ndash;' + to : '+'));
       }
 
       div.innerHTML = labels.join('<br>');
@@ -204,8 +199,6 @@ export default class TeenPregnancyUSStates extends Component {
     };
 
     legend.addTo(map);
-
-    function filterBy(month) {}
   }
 
   handleSlider = (event, value) => {
