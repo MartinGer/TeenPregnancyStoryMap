@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component, View} from 'react';
 import L from 'leaflet';
 import StatesData from './../../data/geojson-us-states.js'
+import Slider from 'material-ui/Slider';
+
 
 export default class TeenPregnancyUSStates extends Component {
 
@@ -8,21 +10,34 @@ export default class TeenPregnancyUSStates extends Component {
     super(props);
     this.state = {
       geojson: StatesData.statesData,
-      selectedYear: 2015
+      selectedYear: 2015,
+      years : [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017
+      ]
     };
 
     console.log(this.state.geojson)
 
     this.loadMap = this.loadMap.bind(this);
+    this.fetchData = this.fetchData.bind(this)
   }
 
-  componentDidMount() {
-
-    console.log('Component did mount')
-
+  fetchData(year) {
     let geojson = this.state.geojson
-    let year = this.state.selectedYear
-
     let url = 'http://vm-tuk2-team03.eaalab.hpi.uni-potsdam.de/api/usa/?year=' + year
     console.log(url)
 
@@ -51,7 +66,17 @@ export default class TeenPregnancyUSStates extends Component {
 
         this.setState({'geojson':geojson})
       }
-    ).then(this.loadMap)
+    )
+  }
+
+  componentDidMount() {
+
+    console.log('Component did mount')
+    let year = this.state.selectedYear
+
+    this.fetchData(year)
+
+    this.loadMap()
   }
 
   loadMap() {
@@ -67,34 +92,34 @@ export default class TeenPregnancyUSStates extends Component {
     }).addTo(map);
 
     // control that shows state info on hover
-    // var info = L.control();
-    //
-    // info.onAdd = function(map) {
-    //   this._div = L.DomUtil.create('div', 'info');
-    //   this.update();
-    //   return this._div;
-    // };
-    //
-    // info.update = function(props) {
-    //   this._div.innerHTML = '<h4>US Population Density</h4>' + (
-    //     props
-    //     ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-    //     : 'Hover over a state');
-    // };
-    //
-    // info.addTo(map);
+    var info = L.control();
+
+    info.onAdd = function(map) {
+      this._div = L.DomUtil.create('div', 'info');
+      this.update();
+      return this._div;
+    };
+
+    info.update = function(props) {
+      this._div.innerHTML = '<h4>US Population Density</h4>' + (
+        props
+        ? '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+        : 'Hover over a state');
+    };
+
+    info.addTo(map);
 
     // get color depending on population density value
     function getColor(d) {
-      return d > 1000
+      return d > 50
         ? '#800026'
-        : d > 500
+        : d > 40
           ? '#BD0026'
-          : d > 200
+          : d > 30
             ? '#E31A1C'
-            : d > 100
+            : d > 20
               ? '#FC4E2A'
-              : d > 50
+              : d > 10
                 ? '#FD8D3C'
                 : d > 20
                   ? '#FEB24C'
@@ -114,42 +139,38 @@ export default class TeenPregnancyUSStates extends Component {
       };
     }
 
-    // function highlightFeature(e) {
-    //   var layer = e.target;
-    //
-    //   layer.setStyle({weight: 5, color: '#666', dashArray: '', fillOpacity: 0.7});
-    //
-    //   if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-    //     layer.bringToFront();
-    //   }
-    //
-    //   // info.update(layer.feature.properties);
-    // }
+    function highlightFeature(e) {
+      var layer = e.target;
 
-    // function resetHighlight(e) {
-    //   geojson.resetStyle(e.target);
-    //   // info.update();
-    // }
-    //
-    // function zoomToFeature(e) {
-    //   map.fitBounds(e.target.getBounds());
-    // }
+      layer.setStyle({weight: 5, color: '#666', dashArray: '', fillOpacity: 0.7});
 
-    function onEachFeature(feature, layer) {
-      // layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+      }
+
+      info.update(layer.feature.properties);
     }
 
-    var geojson
+    function resetHighlight(e) {
+      geojson.resetStyle(e.target);
+      info.update();
+    }
 
-    console.log("Initializing map")
-    let geojsonData = this.state.geojson
-    console.log(geojsonData)
-    geojson = L.geoJson(geojsonData, {
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature, layer) {
+      layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
+    }
+
+    var geojson = L.geoJson(this.state.geojson, {
       style: style,
       onEachFeature: onEachFeature
     }).addTo(map);
 
     map.attributionControl.addAttribution('BirthRates');
+
 
     var legend = L.control({position: 'bottomright'});
 
@@ -160,11 +181,9 @@ export default class TeenPregnancyUSStates extends Component {
           0,
           10,
           20,
-          50,
-          100,
-          200,
-          500,
-          1000
+          30,
+          40,
+          50
         ],
         labels = [],
         from,
@@ -186,28 +205,25 @@ export default class TeenPregnancyUSStates extends Component {
 
     legend.addTo(map);
 
-    var years = [
-      2003,
-      2004,
-      2005,
-      2006,
-      2007,
-      2008,
-      2009,
-      2010,
-      2011,
-      2012,
-      2013,
-      2014,
-      2015,
-      2016,
-      2017
-    ];
-
     function filterBy(month) {}
   }
 
+  handleSlider = (event, value) => {
+    console.log("handle slider" + value)
+    // this.setState({slider: transform(value)});
+    this.fetchData(value)
+  }
+
   render() {
+
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
     return (
       <div class="container">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
@@ -216,12 +232,23 @@ export default class TeenPregnancyUSStates extends Component {
                 <h4 class="header center">Teen Pregnancy US States</h4>
             </div>
         </div>
-        <div id="mapUI">
-          <div ref={(node) => this._mapNode = node} id="map" style={{height: 500, width: 900}}>
-            {/* <h2>Year</h2>
-            <label id='month'></label>
-            <input id='slider' type='range' min='2003' max='2017' step='1' value='2003'/> */}
+        <div class="section no-pad-bot">
+          <div id="mapUI">
+            <div ref={(node) => this._mapNode = node} id="map" style={{height: 400}}>
+              {/* <h2>Year</h2>
+              <label id='month'></label>
+              <input id='slider' type='range' min='2003' max='2017' step='1' value='2003'/> */}
+            </div>
           </div>
+        </div>
+        <div class="section no-pad-bot">
+          {/* <View>Test</View> */}
+          <Slider
+            min={this.state.years[0]}
+            max={this.state.years[this.state.years.length - 1]}
+            step={1}
+            onChange={this.handleSlider}
+          />
         </div>
       </div>
     );
