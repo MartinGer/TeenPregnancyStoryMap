@@ -26,12 +26,9 @@ export default class ReligionUSStates extends Component {
               <div class="card">
                   <div class="card-content">
                       <h5>
-                      In average, Americans seem to be more religious than Europeans, whereby we can see variations between the different states as well. Those religions opinions and their supporters way of living them out are so diversified though, that we shouldn’t expect correlations between pure adherent numbers and the teen pregnancy rates.
+                      In average, Americans seem to be more religious than Europeans, whereby we can see variations between the different states as well. Those religions' opinions and their supporters way of living them out are so diversified though, that we shouldn’t expect correlations between pure adherent numbers and the teen pregnancy rates.
                                         We have to dig deeper:
                       </h5>
-                  </div>
-                  <div class="card-action">
-                      <a>Does religion impact teenage pregnancy?</a>
                   </div>
                   </div>
           </div>
