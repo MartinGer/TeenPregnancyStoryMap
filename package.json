@@ -18,7 +18,8 @@
     "react-materialize": "1.1.2",
     "react-motion": "^0.5.2",
     "react-scripts": "1.1.1",
-    "react-slider": "^0.9.0"
+    "react-slider": "^0.9.0",
+    "underscore": "1.8.3"
   },
   "scripts": {
     "start": "react-scripts start",
