@@ -166,8 +166,8 @@ export default class FundingChart extends Component {
                             </div>
                             <div class="card-action">
                                 <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
-                                <a href="#" onClick={() => this.loadState('11')}>Washington DC</a>
-                                <a href="#" onClick={() => this.loadState('39')}>Washington</a>
+                                <a href="#" onClick={() => this.loadState('53')}>Washington</a>
+                                <a href="#" onClick={() => this.loadState('36')}>NY</a>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
