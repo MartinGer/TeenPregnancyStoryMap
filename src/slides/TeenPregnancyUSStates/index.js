@@ -155,6 +155,7 @@ export default class TeenPregnancyUSStates extends Component {
     **/
 
     function highlightFeature(e) {
+      console.log("highlightFeature")
       var layer = e.target;
 
       layer.setStyle({weight: 5, color: '#666', dashArray: '', fillOpacity: 0.7});
@@ -167,15 +168,18 @@ export default class TeenPregnancyUSStates extends Component {
     }
 
     function resetHighlight(e) {
+      console.log("resetFeature")
       geojson.resetStyle(e.target);
       info.update();
     }
 
     function zoomToFeature(e) {
+      console.log("zoomToFeature")
       map.fitBounds(e.target.getBounds());
     }
 
     function onEachFeature(feature, layer) {
+      console.log("onEachFeature")
       layer.on({mouseover: highlightFeature, mouseout: resetHighlight, click: zoomToFeature});
     }
 
