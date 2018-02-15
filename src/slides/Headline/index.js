@@ -11,8 +11,10 @@ export default class Headline extends Component {
   render() {
     return (
       <div class = "Headline">
-        <h1>An investigation on Teenage Pregnancy</h1>    
-        <h2>and by which factors it gets influenced</h2>   
+          <div class = "textHeader">
+            <h2>An investigation on Teenage Pregnancy</h2>    
+            <h3>and by which factors it gets influenced</h3>   
+          </div>
       </div>
     );
   }
