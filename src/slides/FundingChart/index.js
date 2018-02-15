@@ -28,6 +28,10 @@ export default class FundingChart extends Component {
                         labelString: 'Funding for Sexual Education in $',
                         position: 'left'
                     },
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMax: 9000000
+                    },
                     id: 'y-funding'
                 }, {
                     type: 'linear',
@@ -37,6 +41,13 @@ export default class FundingChart extends Component {
                         labelString: 'Births per 1000 teenagers 13-19'
                     },
                     position: 'right',
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMax: 90
+                    },
+                    gridLines: {
+                        display:false
+                    },
                     id: 'y-birthrate'
                 }]
             }
@@ -119,8 +130,7 @@ export default class FundingChart extends Component {
                 this.displayXLabel(state['year']);
                 this.displayX(state['abstinence only'], 'abstinence only', 0, false, false, "y-funding");
                 this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false, false, "y-funding");
-                this.displayX(state['total'], 'total', 2, true, false, "y-funding");
-                this.displayX(state['birthrate'], 'birth rate', 6, false, true, "y-birthrate");
+                this.displayX(state['birthrate'], 'birth rate', 6, true, true, "y-birthrate");
             }
         })
     }
@@ -157,8 +167,8 @@ export default class FundingChart extends Component {
                             </div>
                             <div class="card-action">
                                 <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
-                                <a href="#" onClick={() => this.loadState('02')}>Utah</a>
-                                <a href="#" onClick={() => this.loadState('11')}>California</a>
+                                <a href="#" onClick={() => this.loadState('11')}>Washington DC</a>
+                                <a href="#" onClick={() => this.loadState('39')}>Washington</a>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
