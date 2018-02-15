@@ -86,7 +86,6 @@ export default class TeenPregnancyUSWorldwide extends Component {
                     </div>
                     <div class="section center">
                         <Line data={this.state.data} options={this.state.options}/>
-
                     </div>
                     <div class="section lower">
                         <p>The United States of America appear to always have higher teen pregnancy rates then other western countries in the European Union. Numbers are decreasing but still staying way over the European average. </p>

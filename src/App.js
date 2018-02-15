@@ -10,6 +10,7 @@ import FundingOnStateLevel from './slides/FundingOnStateLevel'
 import Outlook from './slides/Outlook'
 import {ScrollContainer, ScrollSection} from "./components/OnePageScroll";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import EthnicityUSStates from "./slides/EthnicityUSStates";
 
 class App extends Component {
     render() {
@@ -43,23 +44,29 @@ class App extends Component {
 
                         <ScrollSection pageId={4}>
                             <div className='full-height yellow-background'>
-                                <ReligionUSStates/>
+                                <EthnicityUSStates/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={5}>
                             <div className='full-height yellow-background'>
-                                <FundingChart/>
+                                <ReligionUSStates/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={6}>
                             <div className='full-height yellow-background'>
-                                <FundingOnStateLevel/>
+                                <FundingChart/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={7}>
+                            <div className='full-height yellow-background'>
+                                <FundingOnStateLevel/>
+                            </div>
+                        </ScrollSection>
+
+                        <ScrollSection pageId={8}>
                             <div className='full-height yellow-background'>
                                 <Outlook/>
                             </div>

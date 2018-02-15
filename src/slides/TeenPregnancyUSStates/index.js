@@ -1,7 +1,7 @@
 import React, {Component, View} from 'react';
 import {Chart} from 'react-google-charts';
 import './index.css';
-import {getStateName} from "./fips";
+import {getStateName} from "../Util/fips";
 import {Slider} from "material-ui";
 import _ from 'underscore';
 
@@ -52,20 +52,39 @@ export default class TeenPregnancyUSStates extends Component {
 
     render() {
         return (
-            <div class="container center">
-                <h4>US Teen Pregnancy per State in {this.state.year}</h4>
-                <div class="container center">
+            <div class="container section center row">
+                <h4>Investigating Teen Pregnancy per State</h4>
+                <div class="container  col s8">
                     <Chart
+                        graph_id="TeenPregnancyUsa"
                         chartType="GeoChart"
                         data={this.state.data}
                         options={this.state.options}
-                        graph_id="GeoChart"
                         legend_toggle={true}
-                        width={"1000px"}
+                        width={"800px"}
                         height={"600px"}/>
                 </div>
-                <Slider step={1} value={this.state.year} min={2003} max={2016}
-                        onChange={_.debounce(this.handleSlider, 200)}/>
+                <div class="card sticky-action col s4">
+                    <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                                    US Teen Pregnancy per State in {this.state.year}
+                            </span>
+
+                        <p class="section">
+                            Number of teenage pregnancies per 1000 teenagers, age 15-19.
+                        </p>
+
+                        <p class="section">
+                        Select a year (2003-2016)
+                        <Slider step={1} value={this.state.year} min={2003} max={2016}
+                                onChange={_.debounce(this.handleSlider, 200)}/>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-reveal">
+
+                </div>
             </div>
         );
     }
