@@ -209,8 +209,13 @@ export default class TeenPregnancyUSStates extends Component {
 
   render() {
     return (
-      <div>
+      <div class="container">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.7/dist/leaflet.css" />
+        <div class="section no-pad-bot">
+            <div class="container">
+                <h4 class="header center">Teen Pregnancy US States</h4>
+            </div>
+        </div>
         <div id="mapUI">
           <div ref={(node) => this._mapNode = node} id="map" style={{height: 500, width: 900}}>
             {/* <h2>Year</h2>
