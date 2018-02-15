@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TeenPregnancyWorldwide from './slides/TeenPregnancyWorldwide'
 import TeenPregnancyUSStates from './slides/TeenPregnancyUSStates'
