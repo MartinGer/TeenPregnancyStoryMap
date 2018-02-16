@@ -12,7 +12,7 @@ export default class TeenPregnancyUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#E8EAF6', '#0D47A1']}
+            colorAxis: {colors: ['#E8EAF6', '#0D47A1'], minValue: 0, maxValue: 60}
         };
 
         this.state = {year: 2003, options: options, data: []};
@@ -87,13 +87,13 @@ export default class TeenPregnancyUSStates extends Component {
                         </span>
                         <p>TODO Add sources</p>
                     </div>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">
-                        What is influencing the US teen pregnancy rate?
-                        <i class="material-icons right">close</i>
-                    </span>
-                    <p>TODO Add sources</p>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">
+                            What is influencing the US teen pregnancy rate?
+                            <i class="material-icons right">close</i>
+                        </span>
+                        <p>TODO Add sources</p>
+                    </div>
                 </div>
             </div>
         );
