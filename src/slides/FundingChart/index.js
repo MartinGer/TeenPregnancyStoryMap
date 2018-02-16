@@ -141,7 +141,7 @@ export default class FundingChart extends Component {
         return (
             <div>
                 <div class="container">
-                    <div class="section no-pad-bot">
+                    <div class="section">
                         <h4 class="header center">Sexual Education</h4>
                     </div>
                     <div class="row center">

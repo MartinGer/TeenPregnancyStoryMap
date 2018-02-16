@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './index.css'
-import {getStateName} from "../Util/fips";
 import {Chart} from 'react-google-charts';
 
 export default class ReligionUSStates extends Component {

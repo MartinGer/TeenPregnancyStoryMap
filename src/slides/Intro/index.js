@@ -26,7 +26,7 @@ export default class Intro extends Component {
                         </div>
                     </div>
                     <div class="section no-pad-bot">
-                        <h3 class="center"></h3>
+                        <h3 class="center">&nbsp;</h3>
                     </div>
 
                     <div class="row center">

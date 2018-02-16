@@ -25,7 +25,17 @@ export default class TeenPregnancyUSWorldwide extends Component {
                         labelString: 'Births per 1000 teenagers 13-19'
                     }
                 }]
-            }
+            },
+            annotation: {
+                    annotations: [{
+                        type: 'line',
+                        mode: 'vertical',
+                        scaleID: 'x-axis-0',
+                        value: 2007,
+                        borderColor: 'black',
+                        borderWidth: 30
+                    }]
+                }
         };
         this.colors = {
             backgroundColor: [

@@ -1,4 +1,4 @@
-import React, {Component, View} from 'react';
+import React, {Component} from 'react';
 import {Chart} from 'react-google-charts';
 import './index.css';
 import {getStateName} from "../Util/fips";

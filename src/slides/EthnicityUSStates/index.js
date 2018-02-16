@@ -1,4 +1,4 @@
-import React, {Component, View} from 'react';
+import React, {Component} from 'react';
 import {Chart} from 'react-google-charts';
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 import {getStateName} from "../Util/fips";
@@ -69,6 +69,9 @@ export default class EthnicityUSStates extends Component {
             case 'asian or pacific islander':
                 rate = data['asian or pacific islander'] / (data['estimated pacific islander'] + data['estimated asian']);
                 break;
+            default:
+                console.log('Unexpected ethnicity:' + ethnicity)
+
         }
 
         if (isFinite(rate)) {
@@ -92,7 +95,9 @@ export default class EthnicityUSStates extends Component {
     render() {
         return (
             <div class="container center row">
+              <div class="section">
                 <h4>Investigating Ethnic Differences</h4>
+              </div>
                 <div class="section col s8">
                     <Chart
                         graph_id="EthnicityChart"

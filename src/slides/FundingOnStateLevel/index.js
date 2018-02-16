@@ -68,7 +68,9 @@ export default class FundingOnStateLevel extends Component {
     render() {
         return (
             <div class="container center row">
+              <div class="section">
                 <h4>Investigating Funding for Sexual Education</h4>
+              </div>
                 <div class="section col s8">
                     <Chart
                         graph_id="FundingChart"
@@ -116,7 +118,7 @@ export default class FundingOnStateLevel extends Component {
                                 Percentage of Sex Edu. Funding by Type {this.state.year}
                                 <i class="material-icons right">close</i>
                             </span>
-                        <p>Source <a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html"/>
+                        <p><a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html">Source</a>
                             Quick Response to Study of Abstinence Education by Tamar Lewin. Feb 2, 2010</p>
                     </div>
                 </div>
