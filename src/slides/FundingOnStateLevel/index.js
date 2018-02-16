@@ -16,7 +16,7 @@ export default class FundingOnStateLevel extends Component {
         };
 
         this.state = {
-            year: 2003,
+            year: 2006,
             options: options,
             fundingType: 'abstinence rate',
             fundingData: []

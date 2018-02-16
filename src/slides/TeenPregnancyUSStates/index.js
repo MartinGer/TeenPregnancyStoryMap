@@ -51,7 +51,9 @@ export default class TeenPregnancyUSStates extends Component {
     render() {
         return (
             <div class="container section center row">
-                <h4>Investigating Teen Pregnancy per State</h4>
+                <div class="section">
+                    <h4>Investigating Teen Pregnancy per State</h4>
+                </div>
                 <div class="container  col s8">
                     <Chart
                         graph_id="TeenPregnancyUsa"
@@ -73,9 +75,9 @@ export default class TeenPregnancyUSStates extends Component {
                         </p>
 
                         <p class="section">
-                        Select a year (2003-2016)
-                        <Slider step={1} value={this.state.year} min={2003} max={2016}
-                                onChange={_.debounce(this.handleSlider, 200)}/>
+                            Select a year (2003-2016)
+                            <Slider step={1} value={this.state.year} min={2003} max={2016}
+                                    onChange={_.debounce(this.handleSlider, 200)}/>
                         </p>
                     </div>
                 </div>

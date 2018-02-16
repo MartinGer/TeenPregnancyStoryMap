@@ -104,7 +104,7 @@ export default class EthnicityUSStates extends Component {
                 <div class="card sticky-action col s4">
                     <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                    Teen pregnancy rate ({this.state.year}) to estimated ethnic population share (2016)
+                                    Teen pregnancy rate ({this.state.year}) to estimated ethnic population share
                                     </span>
                         <p class="section">
                             Teen pregnancies by ethnicity of mother divided to an estimated birth rate based on the

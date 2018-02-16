@@ -1,9 +1,7 @@
-.Religion {
-    background-image: url("premium_religion.png");
-    background-repeat: no-repeat;
-    
-    width: 100%;
-    height: 23cm;    
+.religion {
+    background: url("religion.png") center no-repeat;
+    height: 100vh;
+    width:100%;
 }
 
 .box_religion2010 {
@@ -13,6 +11,3 @@
 .box_teenrate {
     padding-top: 8%;
 }
-
-
-    
