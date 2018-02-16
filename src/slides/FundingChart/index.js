@@ -31,7 +31,7 @@ export default class FundingChart extends Component {
                     },
                     ticks: {
                         beginAtZero: true,
-                        suggestedMax: 9000000
+                        suggestedMax: 6000000
                     },
                     id: 'y-funding'
                 }, {
@@ -44,7 +44,7 @@ export default class FundingChart extends Component {
                     position: 'right',
                     ticks: {
                         beginAtZero: true,
-                        suggestedMax: 90
+                        suggestedMax: 60
                     },
                     gridLines: {
                         display: false
