@@ -13,7 +13,7 @@ export default class EthnicityUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#edefff', '#303F9F']}
+            colorAxis: {colors: ['#edefff', '#303F9F'], minValue: 0, maxValue: 5}
         };
 
         this.state = {
@@ -37,19 +37,18 @@ export default class EthnicityUSStates extends Component {
                 console.log(results);
                 return results.json()
             }).then(json => {
-                let usStates = [];
+            let usStates = [];
 
-                for (let i in json) {
-                    let s = json[i];
-                    let rateByEthnicity = this.getRateByEthnicity(s, this.state.ethnicity);
+            for (let i in json) {
+                let s = json[i];
+                let rateByEthnicity = this.getRateByEthnicity(s, this.state.ethnicity);
 
-                    usStates.push([
-                        getStateName(s['fips']),
-                        rateByEthnicity
-                    ])
-                }
+                usStates.push([
+                    getStateName(s['fips']),
+                    rateByEthnicity
+                ])
+            }
 
-                debugger;
                 let data = this.state.ethnicityData;
                 data = data.concat(usStates);
                 this.setState({ethnicityData: data});
@@ -110,7 +109,7 @@ export default class EthnicityUSStates extends Component {
                 <div class="card sticky-action col s4">
                     <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                    Estimated teen pregnancy rate to ethnic population share {this.state.year}
+                                    Teen pregnancy rate ({this.state.year}) to estimated ethnic population share (2016)
                                     </span>
                         <p class="section">
                             Teen pregnancies by ethnicity of mother divided to an estimated birth rate based on the
