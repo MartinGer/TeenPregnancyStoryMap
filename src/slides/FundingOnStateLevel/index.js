@@ -12,7 +12,7 @@ export default class FundingOnStateLevel extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#edefff', '#303F9F'], minValue: 0, maxValue: 1}
+            colorAxis: {colors: ['#E0F2F1', '#004D40'], minValue: 0, maxValue: 1}
         };
 
         this.state = {

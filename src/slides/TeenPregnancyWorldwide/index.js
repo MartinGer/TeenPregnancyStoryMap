@@ -91,9 +91,12 @@ export default class TeenPregnancyUSWorldwide extends Component {
                                         <h5>What is influencing the US teen pregnancy rate?</h5>
                                     </span>
                                     <p class="section">
-                                        The United States of America appear to always have had higher teen pregnancy
-                                        rates then other western countries in the European Union. Numbers are decreasing
-                                        but still staying way over the European average.
+                                        The United States of America appear to always have had a significant higher teen
+                                        pregnancy rates then other western countries in the European Union.
+                                    </p>
+                                    <p class="section">
+                                        In the last decades, the US has seen a downwards trend, which seems to have sped
+                                        up in 2007. We want to investigate what changed.
                                     </p>
                                     <div class="card-action">
                                         <a>What happend in 2007?</a>
