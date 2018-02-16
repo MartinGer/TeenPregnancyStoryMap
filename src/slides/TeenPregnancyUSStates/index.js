@@ -66,24 +66,27 @@ export default class TeenPregnancyUSStates extends Component {
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">
-                                    US Teen Pregnancy per State in {this.state.year}
-                            </span>
-
+                        <span class="card-title activator grey-text text-darken-4">
+                            US Teen Pregnancy per State in {this.state.year}
+                            <i class="material-icons right">more_vert</i>
+                        </span>
                         <p class="section">
                             Number of teenage pregnancies per 1000 teenagers, age 15-19.
                         </p>
-
-                        <p class="section">
+                        <div class="section">
                             Select a year (2003-2016)
+
                             <Slider step={1} value={this.state.year} min={2003} max={2016}
                                     onChange={_.debounce(this.handleSlider, 200)}/>
-                        </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="card-reveal">
-
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">
+                            What is influencing the US teen pregnancy rate?
+                            <i class="material-icons right">close</i>
+                        </span>
+                        <p>TODO Add sources</p>
+                    </div>
                 </div>
             </div>
         );
