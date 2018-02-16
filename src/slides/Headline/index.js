@@ -12,8 +12,8 @@ export default class Headline extends Component {
     return (
       <div class = "Headline row">
           <div class = "textHeader col s12">
-            <h2>An Investigation into Teenage Pregnancy</h2>
-            <h3>and it's influencing factors</h3>
+            <h2>An Investigation on Teenage Pregnancy in the US</h2>
+            <h4>And its influencing factors</h4>
           </div>
       </div>
     );

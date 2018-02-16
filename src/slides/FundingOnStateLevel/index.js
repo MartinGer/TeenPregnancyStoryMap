@@ -94,7 +94,7 @@ export default class FundingOnStateLevel extends Component {
                                           onChange={this.handleFunding}>
                             <RadioButton
                                 value="abstinence rate"
-                                label="Abstinence Only Education"
+                                label="Abstinence-only Education"
                             />
                             <RadioButton
                                 value="comprehensive rate"
