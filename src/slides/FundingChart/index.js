@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
+import {getStateName} from "../Util/fips";
 
 export default class FundingChart extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {us_state: 'Alabama'};
 
         const data = {
             labels: [],
@@ -46,7 +47,7 @@ export default class FundingChart extends Component {
                         suggestedMax: 90
                     },
                     gridLines: {
-                        display:false
+                        display: false
                     },
                     id: 'y-birthrate'
                 }]
@@ -127,6 +128,7 @@ export default class FundingChart extends Component {
             for (let fips in json) {
                 let state = json[fips];
 
+                this.setState({us_state: getStateName(fips)});
                 this.displayXLabel(state['year']);
                 this.displayX(state['abstinence only'], 'abstinence only', 0, false, false, "y-funding");
                 this.displayX(state['comprehensive sex education'], 'comprehensive sex education', 1, false, false, "y-funding");

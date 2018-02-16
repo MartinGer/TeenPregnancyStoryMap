@@ -56,13 +56,13 @@ class App extends Component {
 
                         <ScrollSection pageId={6}>
                             <div className='full-height yellow-background'>
-                                <FundingChart/>
+                                <FundingOnStateLevel/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={7}>
                             <div className='full-height yellow-background'>
-                                <FundingOnStateLevel/>
+                                <FundingChart/>
                             </div>
                         </ScrollSection>
 

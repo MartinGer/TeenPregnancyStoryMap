@@ -12,10 +12,10 @@ export default class TeenPregnancyUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#edefff', '#303F9F']}
+            colorAxis: {colors: ['#E8EAF6', '#0D47A1']}
         };
 
-        this.state = {year: 2003, options: options, data: [['State', 'Teenage Births Per 1000 Teens']]};
+        this.state = {year: 2003, options: options, data: []};
     }
 
     componentWillMount() {
@@ -28,7 +28,7 @@ export default class TeenPregnancyUSStates extends Component {
                 console.log(results);
                 return results.json()
             }).then(json => {
-                let usStates = [];
+                let usStates = [['State', 'Teenage Births Per 1000 Teens']];
 
                 for (let i in json) {
                     let state = json[i];
@@ -38,9 +38,7 @@ export default class TeenPregnancyUSStates extends Component {
                     ])
                 }
 
-                let data = this.state.data;
-                data = data.concat(usStates);
-                this.setState({data: data});
+                this.setState({data: usStates});
             }
         )
     }

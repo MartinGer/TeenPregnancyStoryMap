@@ -13,17 +13,14 @@ export default class EthnicityUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#edefff', '#303F9F']}
+            colorAxis: {colors: ['#f0f0ff', '#212121'], minValue: 0, maxValue: 5}
         };
 
         this.state = {
             year: 2003,
             options: options,
             ethnicity: 'white',
-            ethnicityData: [[
-                'State',
-                'Rate by Population Share'
-            ]]
+            ethnicityData: []
         };
     }
 
@@ -37,7 +34,7 @@ export default class EthnicityUSStates extends Component {
                 console.log(results);
                 return results.json()
             }).then(json => {
-                let usStates = [];
+                let usStates = [['State', 'Rate by Population Share']];
 
                 for (let i in json) {
                     let s = json[i];
@@ -49,10 +46,7 @@ export default class EthnicityUSStates extends Component {
                     ])
                 }
 
-                debugger;
-                let data = this.state.ethnicityData;
-                data = data.concat(usStates);
-                this.setState({ethnicityData: data});
+                this.setState({ethnicityData: usStates});
             }
         )
     }
