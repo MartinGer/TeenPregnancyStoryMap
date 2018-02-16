@@ -110,11 +110,11 @@ export default class EthnicityUSStates extends Component {
                 <div class="card sticky-action col s4">
                     <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                    Estimated teen pregnancy rate to ethnic population share {this.state.year}
+                                    Normalized ethnical teen pregnancy rates <br></br>({this.state.year})
                                     </span>
                         <p class="section">
-                            Teen pregnancies by ethnicity of mother divided to an estimated birth rate based on the
-                            ethnic population share (status 2016).
+                            Teen pregnancies by ethnicity of mother relative to the
+                            ethnic population share (from 2016).
                         </p>
 
                         <RadioButtonGroup name="ethnicity" defaultSelected="white" class="section"

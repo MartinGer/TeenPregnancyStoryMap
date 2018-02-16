@@ -140,29 +140,21 @@ export default class FundingChart extends Component {
             <div>
                 <div class="container">
                     <div class="section no-pad-bot">
-                        <h2 class="header center">Sexual Education</h2>
+                        <h4 class="header center">Sexual Education in the US</h4>
                     </div>
                     <div class="row center">
                         <div class="section col s8">
-                            <Line data={this.state.data} options={this.state.options} height={50} width={66}/>
+                            <Line data={this.state.data} options={this.state.options} height={40} width={66}/>
                         </div>
                         <div class="card sticky-action col s4">
                             <div class="card-image waves-effect waves-block waves-light">
-                            
+
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">
-                                   <h4> Abstinence-Only vs Comprehensive</h4></span>
-                                <p>
-                                    In an effort to reduce teenage pregnancy rates the U.S. government has funded
-                                    abstinence-only sex education programs for more than a decade.
-                                    Abstinence-only sex education is a form of sex education that teaches not having sex
-                                    outside of marriage.
-                                    It often exclude other types of reproductive health education e.g. birth control and
-                                    safe sex an.
-                                    In contrast comprehensive sex education covers the use of birth control, safe sexual
-                                    practices and usage of contraception, such as condoms, as well as sexual abstinence.
-                                </p>
+                                   <p>
+                                    The US government funded abstinence-only sex education programs for more than a decade,
+                                    but shifted funds to comprehensive programs at some point.
+                                  </p>
                             </div>
                             <div class="card-action">
                                 <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
@@ -177,6 +169,32 @@ export default class FundingChart extends Component {
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    <div class="row center">
+                      <div class="card sticky-action col s6">
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                               <h5> Abstinence-only sex education</h5></span>
+                                <ul>
+                                  <li>- No sex outside of marriage</li>
+                                  <li>- Sexual abstinence</li>
+                                  <li> &nbsp;</li>
+                                  <li> &nbsp;</li>
+                                </ul>
+                        </div>
+                      </div>
+                      <div class="card sticky-action col s6">
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">
+                               <h5>Comprehensive sex education</h5></span>
+                                <ul>
+                                  <li>- Use of birth control</li>
+                                  <li>- Safe sexual practices</li>
+                                  <li>- Usage of contraception, such as condoms</li>
+                                  <li>- Sexual abstinence</li>
+                                </ul>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>

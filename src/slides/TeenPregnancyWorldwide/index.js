@@ -76,7 +76,7 @@ export default class TeenPregnancyUSWorldwide extends Component {
             <div>
                 <div class="container">
                     <div class="section no-pad-bot">
-                        <h4 class="header center">Teenage Pregnancy Worldwide</h4>
+                        <h4 class="header center">Teen Pregnancies around the Globe</h4>
                     </div>
                     <div class="row center">
                         <div class="section col s8">
@@ -88,15 +88,15 @@ export default class TeenPregnancyUSWorldwide extends Component {
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">
-                                        <h5>What is influencing the US teen pregnancy rate?</h5>
+                                        <h5>Why is the rate in the US higher than in other industrial countries?</h5>
                                     </span>
                                     <p class="section">
-                                        The United States of America appear to always have had higher teen pregnancy
-                                        rates then other western countries in the European Union. Numbers are decreasing
-                                        but still staying way over the European average.
+                                        The United States of America seem to have had higher teen pregnancy
+                                        rates than other western countries, e.g. in the European Union from the year one. <br></br>
+                                        By today, the numbers seem to converge but are still clearly higher than in the European average.
                                     </p>
                                     <div class="card-action">
-                                        <a>What happend in 2007?</a>
+                                        <a>But, what happened in 2007?</a>
                                     </div>
                                     <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive

@@ -53,7 +53,7 @@ export default class TeenPregnancyUSStates extends Component {
     render() {
         return (
             <div class="container section center row">
-                <h4>Investigating Teen Pregnancy per State</h4>
+                <h4>Investigating Teen Pregnancies on a state-level</h4>
                 <div class="container  col s8">
                     <Chart
                         graph_id="TeenPregnancyUsa"
@@ -67,7 +67,7 @@ export default class TeenPregnancyUSStates extends Component {
                 <div class="card sticky-action col s4">
                     <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
-                                    US Teen Pregnancy per State in {this.state.year}
+                                    Teen Pregnancy Rates per State <br></br>({this.state.year})
                             </span>
 
                         <p class="section">

@@ -17,13 +17,18 @@ export default class Outlook extends Component {
                             <div class="cardOutlook">
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">
-                                       <h4> How will the Teenage Pregnancy rate develop in the future? </h4>
+                                       <h4> How will the Teenage Pregnancy Rate develop in the future? </h4>
                                         </span>
-                                    <h5>
-                                    The Trump administration has cut nearly $214 million from teen pregnancy prevention programs across the country.
-
-                                    More than 80 organizations will lose Obama-era grants from the US Department of Health and Human Services
-                                    </h5>
+                                    <p>
+                                    The Trump administration has cut nearly $214 million
+                                    from teen pregnancy prevention programs across the country.
+                                  </p><br></br><p>
+                                    More than 80 organizations will lose Obama-era grants
+                                    from the US Department of Health and Human Services.
+                                    </p><br></br><p>
+                                    Based on the presented data it is likely that the decrease
+                                    of the teen pregnancy rates weakens or stops.
+                                  </p>
                                 </div>
                                 </div>
                                 </div>
