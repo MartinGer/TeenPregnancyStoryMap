@@ -88,6 +88,13 @@ export default class TeenPregnancyUSStates extends Component {
                         <p>TODO Add sources</p>
                     </div>
                 </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        What is influencing the US teen pregnancy rate?
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <p>TODO Add sources</p>
+                </div>
             </div>
         );
     }
