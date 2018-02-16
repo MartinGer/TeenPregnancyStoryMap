@@ -86,10 +86,13 @@ export default class TeenPregnancyUSWorldwide extends Component {
                             <div class="card">
                                 <div class="card-image waves-effect waves-block waves-light">
                                 </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">
-                                        <h5>What is influencing the US teen pregnancy rate?</h5>
-                                    </span>
+                                <div class="card-content activator">
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4">
+                                            What is influencing the US teen pregnancy rate?
+                                            <i class="material-icons right">more_vert</i>
+                                        </span>
+                                    </div>
                                     <p class="section">
                                         The United States of America appear to always have had a significant higher teen
                                         pregnancy rates then other western countries in the European Union.

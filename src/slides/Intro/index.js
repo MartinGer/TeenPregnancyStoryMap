@@ -11,14 +11,10 @@ export default class Intro extends Component {
     render() {
         return (
             <div class="Intro">
-
                 <div class="container">
                     <div class="containerIntro">
                         <div class="card sticky-action col s12">
-
-
                             <div class="card-content">
-
                                 <span class="card-title activator grey-text text-darken-4">
                                    <h3>What is teen pregnancy and why is it problematic?</h3></span>
                                 <p>
@@ -26,11 +22,6 @@ export default class Intro extends Component {
                                     <b> females under 20</b>. Pregnancy in early stages of a young adult's life bears
                                     not only health risks, but also several social and economic consequences.
                                 </p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">
-                                  Teenage Pregnancy in the USA and factors influencing its occurence
-                                </span>
                             </div>
                         </div>
                     </div>
@@ -43,15 +34,20 @@ export default class Intro extends Component {
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                             <div class="card-content left-align">
-                                <span class="card-title activator grey-text text-darken-4">Education</span>
+                                <span class="card-title activator grey-text text-darken-4">Education
+                                     <i class="material-icons right">more_vert</i>
+                                </span>
                                 Risk of education gaps
                                 <ul>
                                     <li>- Only 40% complete high school degrees</li>
                                     <li>- College completion is reduced by 65%</li>
                                 </ul>
                             </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Educational problems</span>
+                            <div class="card-reveal left-align">
+                                <span class="card-title grey-text text-darken-4">Education
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <p>TODO Add sources</p>
                             </div>
                         </div>
 
@@ -60,17 +56,22 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content left-align">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Health</span>
+                                    Health
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
                                 Risk of
                                 <ul>
                                     <li>- Anaemia</li>
-                                    <li>- Blood pressure</li>
+                                    <li>- High blood pressure</li>
                                     <li>- Premature birth</li>
                                     <li>- Depression</li>
                                 </ul>
                             </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
+                            <div class="card-reveal left-align">
+                                <span class="card-title grey-text text-darken-4">Health
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <p>TODO Add sources</p>
                             </div>
                         </div>
 
@@ -79,15 +80,20 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content left-align">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Finance</span>
+                                    Finance
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
                                 Increased expenses for
                                 <ul>
                                     <li>- Medical care for mother and her child</li>
                                     <li>- Child care and baby accessories</li>
                                 </ul>
                             </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
+                            <div class="card-reveal left-align">
+                                <span class="card-title grey-text text-darken-4">Finance
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <p>TODO Add sources</p>
                             </div>
                         </div>
 
@@ -96,13 +102,21 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content left-align">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Social Life</span>
+                                    Social Life
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
 
                                 Risk of
                                 <ul>
                                     <li>- Disturbed self-identitification</li>
                                     <li>- Strained relationships with parents and friends</li>
                                 </ul>
+                            </div>
+                            <div class="card-reveal left-align">
+                                <span class="card-title grey-text text-darken-4">Social Life
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <p>TODO Add sources</p>
                             </div>
                         </div>
                     </div>
