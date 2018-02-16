@@ -20,7 +20,7 @@ export default class Intro extends Component {
                             <div class="card-content">
                            
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Teenage Pregnancy in the USA and factors influencing its occurence</span>
+                                   <h3> Teenage Pregnancy in the USA and factors influencing its occurence</h3></span>
                                 <p>
                                     We want to have a look on pregnant teenage girls of the age of 15 to 19 
                                     whereby those normally haven’t completed their core education—secondary 
