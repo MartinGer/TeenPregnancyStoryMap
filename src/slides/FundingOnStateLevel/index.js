@@ -79,9 +79,10 @@ export default class FundingOnStateLevel extends Component {
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">
-                                    Percentage of Sex Edu. Funding by Type {this.state.year}
-                                    </span>
+                        <span class="card-title activator grey-text text-darken-4">
+                                Percentage of Sex Edu. Funding by Type {this.state.year}
+                            <i class="material-icons right">more_vert</i>
+                        </span>
                         <p class="section">
                             The Obama administration eliminated nearly two-thirds of federal financing for
                             abstinence-only programs,
@@ -109,9 +110,12 @@ export default class FundingOnStateLevel extends Component {
                     </div>
 
                     <div class="card-reveal">
-                        <span><i class="material-icons right">close</i></span>
-                        Source <a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html">Quick Response to Study of Abstinence Education by Tamar Lewin. Feb 2, 2010
-                    </a>
+                            <span class="card-title activator grey-text text-darken-4">
+                                Percentage of Sex Edu. Funding by Type {this.state.year}
+                                <i class="material-icons right">close</i>
+                            </span>
+                        <p>Source <a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html"/>
+                            Quick Response to Study of Abstinence Education by Tamar Lewin. Feb 2, 2010</p>
                     </div>
                 </div>
             </div>

@@ -13,19 +13,29 @@ export default class Outlook extends Component {
             <div class="trump">
                 <div class="row center">
                     <div class="section col s5 push-s1">
-                        <div class="card">
-                            <div class="cardOutlook">
+                        <div class="cardOutlook">
+                            <div class="card">
                                 <div class="card-content">
                                     <span class="card-title activator grey-text text-darken-4">
-                                       <h4> How will the Teenage Pregnancy rate develop in the future? </h4>
-                                        </span>
+                                       <h4>How will the Teenage Pregnancy rate develop in the future?</h4>
+                                        <i class="material-icons right">more_vert</i>
+                                    </span>
                                     <p class="section">
                                         The Trump administration has <b>cut nearly $214 million</b> from teen pregnancy
                                         prevention programs across the country.
 
-                                        More than <b>80 organizations will lose Obama-era grants</b> from the US Department of
+                                        More than <b>80 organizations will lose Obama-era grants</b> from the US
+                                        Department of
                                         Health and Human Services
                                     </p>
+                                </div>
+
+                                <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">
+                                    How will the Teenage Pregnancy rate develop in the future?
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                    <p>TODO Add Sources</p>
                                 </div>
                             </div>
                         </div>

@@ -149,12 +149,11 @@ export default class FundingChart extends Component {
                             <Line data={this.state.data} options={this.state.options} height={50} width={66}/>
                         </div>
                         <div class="card sticky-action col s4">
-                            <div class="card-image waves-effect waves-block waves-light">
-                            
-                            </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                   <h4> Abstinence-Only vs Comprehensive</h4></span>
+                                    Abstinence-Only vs Comprehensive
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
                                 <p>
                                     In an effort to reduce teenage pregnancy rates the U.S. government has funded
                                     abstinence-only sex education programs for more than a decade.
@@ -166,17 +165,19 @@ export default class FundingChart extends Component {
                                     practices and usage of contraception, such as condoms, as well as sexual abstinence.
                                 </p>
                             </div>
+
                             <div class="card-action">
                                 <a href="#" onClick={() => this.loadState('01')}>Alabama</a>
                                 <a href="#" onClick={() => this.loadState('53')}>Washington</a>
                                 <a href="#" onClick={() => this.loadState('36')}>NY</a>
                             </div>
+
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
-                                    <i class="material-icons right">close</i></span>
-                                <p>
-                                    Sources...
-                                </p>
+                                <span class="card-title grey-text text-darken-4">
+                                    Abstinence-Only vs Comprehensive
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <p>TODO Add Sources</p>
                             </div>
                         </div>
                     </div>

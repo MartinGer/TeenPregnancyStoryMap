@@ -103,9 +103,10 @@ export default class EthnicityUSStates extends Component {
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4">
-                                    Teen pregnancy rate ({this.state.year}) to estimated ethnic population share
-                                    </span>
+                        <span class="card-title activator grey-text text-darken-4">
+                            Teen pregnancy rate ({this.state.year}) to estimated ethnic population share
+                            <i class="material-icons right">more_vert</i>
+                        </span>
                         <p class="section">
                             Teen pregnancies by ethnicity of mother divided to an estimated birth rate based on the
                             ethnic population share (status 2016).
@@ -138,7 +139,11 @@ export default class EthnicityUSStates extends Component {
                     </div>
 
                     <div class="card-reveal">
-
+                        <span class="card-title activator grey-text text-darken-4">
+                            Teen pregnancy rate ({this.state.year}) to estimated ethnic population share
+                            <i class="material-icons right">close</i>
+                        </span>
+                        <p>TODO Add sources</p>
                     </div>
                 </div>
             </div>

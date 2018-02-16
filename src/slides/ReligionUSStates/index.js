@@ -22,6 +22,7 @@ export default class ReligionUSStates extends Component {
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">
                                 The impact of religion
+                                 <i class="material-icons right">more_vert</i>
                             </span>
 
                             <p class="section">
@@ -32,10 +33,14 @@ export default class ReligionUSStates extends Component {
                                 religion does not seem to solve our 2007 incident.
                             </p>
                         </div>
-                    </div>
 
-                    <div class="card-reveal">
-
+                        <div class="card-reveal">
+                            <span class="card-title activator grey-text text-darken-4">
+                                The impact of religion
+                                <i class="material-icons right">close</i>
+                            </span>
+                            <p>TODO Add sources</p>
+                        </div>
                     </div>
                 </div>
             </div>
