@@ -84,30 +84,31 @@ export default class TeenPregnancyUSWorldwide extends Component {
                         </div>
                         <div class="section col s4">
                             <div class="card">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                </div>
                                 <div class="card-content activator">
-                                    <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4">
                                             What is influencing the US teen pregnancy rate?
                                             <i class="material-icons right">more_vert</i>
                                         </span>
-                                    </div>
                                     <p class="section">
-                                        The United States of America appear to always have had a significant higher teen
+                                        The United States of America appear to always have had a significant higher
+                                        teen
                                         pregnancy rates then other western countries in the European Union.
                                     </p>
                                     <p class="section">
-                                        In the last decades, the US has seen a downwards trend, which seems to have sped
+                                        In the last decades, the US has seen a downwards trend, which seems to have
+                                        sped
                                         up in 2007. We want to investigate what changed.
                                     </p>
                                     <div class="card-action">
                                         <a>What happend in 2007?</a>
                                     </div>
-                                    <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive
-                                            <i class="material-icons right">close</i></span>
-                                    </div>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">
+                                        What is influencing the US teen pregnancy rate?
+                                        <i class="material-icons right">close</i>
+                                    </span>
+                                    <p>TODO Add sources</p>
                                 </div>
                             </div>
                         </div>
