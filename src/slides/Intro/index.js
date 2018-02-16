@@ -11,27 +11,30 @@ export default class Intro extends Component {
   render() {
         return (
             <div class="Intro">
-           
+
                 <div class="container">
                 <div class="containerIntro">
-                        <div class="card sticky-action col s12">  
+                        <div class="card sticky-action col s12">
 
-                         
+
                             <div class="card-content">
-                           
+
                                 <span class="card-title activator grey-text text-darken-4">
-                                   <h3> Teenage Pregnancy in the USA and factors influencing its occurence</h3></span>
+                                   <h4> Teenage Pregnancy in the USA <br></br>and factors influencing its occurence</h4>
+                                </span>
                                 <p>
-                                    We want to have a look on pregnant teenage girls of the age of 15 to 19 
-                                    whereby those normally haven’t completed their core education—secondary 
-                                    school—have few or no marketable skills, are financially dependent upon 
-                                    her parents and/or continue to live at home. Often they are no mentally 
-                                    mature enough to raise a child on their own, which leads to problems for 
-                                    the mother as well as for the child.   
+                                    We want to have a look on pregnant teenage girls at the age of 15 to 19.
+                                    These girls normally have not completed their core education — secondary
+                                    school — have few or no marketable skills, are financially dependent upon
+                                    her parents and/or continue to live at home. Often they are not mentally
+                                    mature enough to raise a child on their own, which may lead to problems for
+                                    the mother as well as for the child.
                                 </p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Teenage Pregnancy in the USA and factors influencing its occurence</span>
+                                <span class="card-title grey-text text-darken-4">
+                                  Teenage Pregnancy in the USA and factors influencing its occurence
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -45,10 +48,12 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Educational Issues</span>                     
-                                <p> - only 40% finish their high school degrees </p>
-                                <p> - college completion reduced by 65% </p>    
-                                <p> </p>                      
+                                    Education</span>
+                                    Risk of education gaps
+                                    <ul>
+                                <li>- Only 40% complete high school degrees</li>
+                                <li>- College completion is reduced by 65%</li>
+                              </ul>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Educational problems</span>
@@ -60,11 +65,14 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Health Issues</span>
-                                
-                                <p> - high risk of anaemia & blood pressure</p>
-                                <p> - premature birth and depression</p>
-                                
+                                    Health</span>
+                                    High risk of
+                                <ul>
+                                <li>- Anaemia</li>
+                                <li>- Blood pressure</li>
+                                <li>- Premature birth</li>
+                                <li>- Depression</li>
+                              </ul>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
@@ -76,11 +84,12 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Financial Issues</span>
-                        
-                                <p>   - medical care for mother and her child </p>
-                                <p>   - child care and baby accessories </p>
-                                <p> </p>  
+                                    Finance</span>
+                                    Increased expenses for
+                                <ul>
+                                <li>- Medical care for mother and her child </li>
+                                <li>- Child care and baby accessories </li>
+                              </ul>
                             </div>
                             <div class="card-reveal">
                                 <span class="card-title grey-text text-darken-4">Abstinence-Only vs Comprehensive</span>
@@ -92,10 +101,13 @@ export default class Intro extends Component {
                             </div>
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">
-                                    Social Issues</span>
-                                <p> - suffering of self-identity development</p>      
-                                <p> - strained relationships with parents & friends
-                                </p>
+                                    Social Life</span>
+
+                                    Risks of
+                                <ul>
+                                  <li>- Disturbed self-identitification</li>
+                                  <li>- Strained relationships with parents and friends</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

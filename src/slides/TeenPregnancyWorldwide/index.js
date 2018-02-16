@@ -76,7 +76,7 @@ export default class TeenPregnancyUSWorldwide extends Component {
             <div>
                 <div class="container">
                     <div class="section no-pad-bot">
-                        <h2 class="header center">Teenage Pregnancy Worldwide</h2>
+                        <h4 class="header center">Teenage Pregnancy Worldwide</h4>
                     </div>
                     <div class="row center">
                         <div class="section col s8">
