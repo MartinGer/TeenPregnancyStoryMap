@@ -74,9 +74,9 @@ export default class TeenPregnancyUSStates extends Component {
                             Number of teenage pregnancies per 1000 teenagers, age 15-19.
                         </p>
                         <div class="section">
-                            Select a year (2003-2016)
+                            Select a year (2003-2015)
 
-                            <Slider step={1} value={this.state.year} min={2003} max={2016}
+                            <Slider step={1} value={this.state.year} min={2003} max={2015}
                                     onChange={_.debounce(this.handleSlider, 200)}/>
                         </div>
                     </div>
