@@ -12,7 +12,9 @@ export default class TeenPregnancyUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#E8EAF6', '#0D47A1'], minValue: 0, maxValue: 60}
+            colorAxis: {colors: ['#E8EAF6', '#0D47A1'], minValue: 0, maxValue: 60},
+            chartArea: {width: '100%'},
+            width: '100%'
         };
 
         this.state = {year: 2003, options: options, data: []};
@@ -61,8 +63,9 @@ export default class TeenPregnancyUSStates extends Component {
                         data={this.state.data}
                         options={this.state.options}
                         legend_toggle={true}
-                        width={"800px"}
-                        height={"600px"}/>
+                        width={"100%"}
+                        height={"100%"}
+                      />
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">

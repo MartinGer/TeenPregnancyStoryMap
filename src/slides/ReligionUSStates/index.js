@@ -11,7 +11,7 @@ export default class ReligionUSStates extends Component {
             region: 'US',
             resolution: 'provinces',
             colorAxis: {colors: ['#E8EAF6', '#0D47A1']},
-            chartArea: {width: '94%'},
+            chartArea: {width: '100%'},
             width: '100%'
         };
 

@@ -13,7 +13,9 @@ export default class EthnicityUSStates extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#f0f0ff', '#212121'], minValue: 0, maxValue: 5}
+            colorAxis: {colors: ['#f0f0ff', '#212121'], minValue: 0, maxValue: 5},
+            chartArea: {width: '100%'},
+            width: '100%'
         };
 
         this.state = {
@@ -98,8 +100,8 @@ export default class EthnicityUSStates extends Component {
                         data={this.state.ethnicityData}
                         options={this.state.options}
                         legend_toggle={true}
-                        width={"800px"}
-                        height={"600px"}/>
+                        width={"100%"}
+                        height={"100%"}/>
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">

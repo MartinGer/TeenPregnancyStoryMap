@@ -12,7 +12,9 @@ export default class FundingOnStateLevel extends Component {
         let options = {
             region: 'US',
             resolution: 'provinces',
-            colorAxis: {colors: ['#E0F2F1', '#004D40'], minValue: 0, maxValue: 1}
+            colorAxis: {colors: ['#E0F2F1', '#004D40'], minValue: 0, maxValue: 1},
+            chartArea: {width: '100%'},
+            width: '100%'
         };
 
         this.state = {
@@ -74,8 +76,8 @@ export default class FundingOnStateLevel extends Component {
                         data={this.state.fundingData}
                         options={this.state.options}
                         legend_toggle={true}
-                        width={"800px"}
-                        height={"600px"}/>
+                        width={"100%"}
+                        height={"100%"}/>
                 </div>
                 <div class="card sticky-action col s4">
                     <div class="card-content">
