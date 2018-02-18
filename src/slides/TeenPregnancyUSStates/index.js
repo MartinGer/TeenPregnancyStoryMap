@@ -95,7 +95,8 @@ export default class TeenPregnancyUSStates extends Component {
                             What is influencing the US teen pregnancy rate?
                             <i class="material-icons right">close</i>
                         </span>
-                        <p>TODO Add sources</p>
+                        <p><a href="https://www.cdc.gov/nchs/data-visualization/teen-births/">Source </a>
+                        U.S. and State Trends on Teen Births, 1990–2015</p>
                     </div>
                 </div>
             </div>

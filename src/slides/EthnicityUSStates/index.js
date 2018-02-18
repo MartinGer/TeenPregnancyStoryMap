@@ -150,7 +150,8 @@ export default class EthnicityUSStates extends Component {
                             Teen pregnancy rate ({this.state.year}) to estimated ethnic population share
                             <i class="material-icons right">close</i>
                         </span>
-                        <p>TODO Add sources</p>
+                        <p><a href="https://www.hhs.gov/ash/oah/adolescent-development/reproductive-health-and-teen-pregnancy/teen-pregnancy-and-childbearing/trends/index.html">Source </a>
+                        U.S. Department of Health & Human Services: Trends in Teen Pregnancy and Childbearing June 2, 2016</p>
                     </div>
                 </div>
             </div>

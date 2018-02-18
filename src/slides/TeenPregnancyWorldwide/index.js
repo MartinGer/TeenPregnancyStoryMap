@@ -118,7 +118,8 @@ export default class TeenPregnancyUSWorldwide extends Component {
                                         What is influencing the US teen pregnancy rate?
                                         <i class="material-icons right">close</i>
                                     </span>
-                                    <p>TODO Add sources</p>
+                                    <p><a href="http://www.who.int/mediacentre/factsheets/fs364/en/">Source </a>
+                                    World Health Organization: Adolescent pregnancy January 2018</p>
                                 </div>
                             </div>
                         </div>

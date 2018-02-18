@@ -35,7 +35,10 @@ export default class Outlook extends Component {
                                     How will the Teenage Pregnancy rate develop in the future?
                                     <i class="material-icons right">close</i>
                                 </span>
-                                    <p>TODO Add Sources</p>
+                                    <p><a href="https://www.washingtonpost.com/news/to-your-health/wp/2018/02/15/planned-parenthood-sues-trump-administration-for-ending-grants-to-teen-pregnancy-programs/">Source </a>
+                                    The Washington Post: Nine organizations sue Trump administration for ending grants to teen pregnancy programs Feb 15, 2018</p>
+                                    <p><a href="https://unsplash.com/photos/1HtojWDvEWE">Photo </a>
+                                    by Jomar on Unsplash</p>
                                 </div>
                             </div>
                         </div>

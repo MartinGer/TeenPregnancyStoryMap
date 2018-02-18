@@ -177,7 +177,8 @@ export default class FundingChart extends Component {
                                     Abstinence-Only vs Comprehensive
                                     <i class="material-icons right">close</i>
                                 </span>
-                                <p>TODO Add Sources</p>
+                                <p><a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html">Source </a>
+                                Abstinence-Only Education and Teen Pregnancy Rates: Why We Need Comprehensive Sex Education in the U.S by Kathrin F. Stanger-Hall, David W. Hall Oct 14, 2011</p>
                             </div>
                         </div>
                     </div>
