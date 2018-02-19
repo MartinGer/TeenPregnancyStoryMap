@@ -152,6 +152,8 @@ export default class EthnicityUSStates extends Component {
                         </span>
                         <p><a href="https://www.hhs.gov/ash/oah/adolescent-development/reproductive-health-and-teen-pregnancy/teen-pregnancy-and-childbearing/trends/index.html">Source </a>
                         U.S. Department of Health & Human Services: Trends in Teen Pregnancy and Childbearing June 2, 2016</p>
+                        <p><a href="https://www.kff.org/other/state-indicator/distribution-by-raceethnicity/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D">Dataset: </a>
+                        Kaiser Family Foundation: Population Distribution by Race/Ethnicity, 2016</p>
                     </div>
                 </div>
             </div>

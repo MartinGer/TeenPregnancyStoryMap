@@ -120,6 +120,8 @@ export default class FundingOnStateLevel extends Component {
                             </span>
                         <p><a href="http://www.nytimes.com/2010/02/03/education/03abstinence.html">Source </a>
                             Quick Response to Study of Abstinence Education by Tamar Lewin. Feb 2, 2010</p>
+                            <p><a href="http://www.siecus.org/index.cfm?fuseaction=page.viewPage&pageID=1268&nodeID=1">Dataset: </a>
+                            SIECUS (Sexuality Information and Education Council of the United States): SIECUS State Profiles for years 2003 to 2017, 2007 is missing</p>
                     </div>
                 </div>
             </div>

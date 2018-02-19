@@ -82,7 +82,10 @@ export default class ReligionUSStates extends Component {
                         The impact of religion
                         <i class="material-icons right">close</i>
                     </span>
-                    <p>TODO Add sources</p>
+                    <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2758825/">Source </a>
+                    Religiosity and teen birth rate in the United States by Joseph M. and Jillian C. Strayhorn, 2009</p>
+                    <p><a href="http://www.usreligioncensus.org/compare.php">Dataset: </a>
+                    ASARB (Association of Statisticans of American Religious Bodies): U.S. Religion Census 1952 to 2010, List of State Data from 2010</p>
                   </div>
               </div>
           </div>

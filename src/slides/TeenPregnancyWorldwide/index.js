@@ -120,6 +120,8 @@ export default class TeenPregnancyUSWorldwide extends Component {
                                     </span>
                                     <p><a href="http://www.who.int/mediacentre/factsheets/fs364/en/">Source </a>
                                     World Health Organization: Adolescent pregnancy January 2018</p>
+                                    <p><a href="https://data.worldbank.org/indicator/SP.ADO.TFRT?name_desc=true">Dataset: </a>
+                                    The World Bank: Adolescent fertility rate (births per 1,000 women ages 15-19), 2017</p>
                                 </div>
                             </div>
                         </div>
