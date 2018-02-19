@@ -19,7 +19,7 @@ export default class EthnicityUSStates extends Component {
         };
 
         this.state = {
-            year: 2003,
+            year: 2007,
             options: options,
             ethnicity: 'white',
             ethnicityData: []
@@ -92,6 +92,10 @@ export default class EthnicityUSStates extends Component {
         this.fetchData();
     };
 
+    moveDown() {
+      this.props.scrollContainer.moveDown()
+    };
+
     render() {
         return (
             <div class="container center row">
@@ -142,6 +146,9 @@ export default class EthnicityUSStates extends Component {
                             Select a year (2003-2015)
                             <Slider step={1} value={this.state.year} min={2003} max={2015}
                                     onChange={_.debounce(this.handleSlider, 200)}/>
+                        </div>
+                        <div class="card-action">
+                            <a onClick={this.moveDown.bind(this)}>How about religion?</a>
                         </div>
                     </div>
 

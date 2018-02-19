@@ -13,11 +13,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import EthnicityUSStates from "./slides/EthnicityUSStates";
 
 class App extends Component {
+
+   constructor() { super(); this.state = {}; }
+
     render() {
         return (
             <div className="App">
                 <MuiThemeProvider>
-                    <ScrollContainer>
+                    <ScrollContainer ref={sc => !this.state.sc && this.setState({ sc })}>
                         <ScrollSection pageId={0}>
                             <div className='full-height green-background'>
                                 <Headline/>
@@ -32,37 +35,37 @@ class App extends Component {
 
                         <ScrollSection pageId={2}>
                             <div className='full-height green-background'>
-                                <TeenPregnancyWorldwide/>
+                                <TeenPregnancyWorldwide scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={3}>
                             <div className='full-height yellow-background'>
-                                <TeenPregnancyUSStates/>
+                                <TeenPregnancyUSStates scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={4}>
                             <div className='full-height yellow-background'>
-                                <EthnicityUSStates/>
+                                <EthnicityUSStates scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={5}>
                             <div className='full-height yellow-background'>
-                                <ReligionUSStates/>
+                                <ReligionUSStates scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={6}>
                             <div className='full-height yellow-background'>
-                                <FundingOnStateLevel/>
+                                <FundingOnStateLevel scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 
                         <ScrollSection pageId={7}>
                             <div className='full-height yellow-background'>
-                                <FundingChart/>
+                                <FundingChart scrollContainer={this.state.sc}/>
                             </div>
                         </ScrollSection>
 

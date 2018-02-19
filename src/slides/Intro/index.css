@@ -6,10 +6,9 @@
 }
 
 .containerIntro {
-    padding-top: 15%;
+    padding-top: 10%;
 }
 
-.intro {
-    height: 230px;
+.containerPadding {
+    padding-top: 5%;
 }
-

@@ -16,7 +16,7 @@ export default class Headline extends Component {
             <h4>And its influencing factors</h4>
           </div>
           <div class = "source">
-            <a href="http://komotoz.ru/photo/people/photo_beremennosti.php">image source </a>
+            <a href="http://komotoz.ru/photo/people/photo_beremennosti.php">Image Source</a>
           </div>
       </div>
     );

@@ -31,7 +31,14 @@ export default class FundingChart extends Component {
                     },
                     ticks: {
                         beginAtZero: true,
-                        suggestedMax: 6000000
+                        suggestedMax: 6000000,
+                        callback: function(value, index, values) {
+                          if(parseInt(value) >= 1000){
+                            return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                          } else {
+                            return '$' + value;
+                          }
+                        }
                     },
                     id: 'y-funding'
                 }, {

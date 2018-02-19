@@ -17,7 +17,7 @@ export default class TeenPregnancyUSStates extends Component {
             width: '100%'
         };
 
-        this.state = {year: 2003, options: options, data: []};
+        this.state = {year: 2007, options: options, data: []};
     }
 
     componentWillMount() {
@@ -48,6 +48,10 @@ export default class TeenPregnancyUSStates extends Component {
     handleSlider = (event, year) => {
         this.setState({year: year});
         this.fetchData();
+    };
+
+    moveDown() {
+      this.props.scrollContainer.moveDown()
     };
 
     render() {
@@ -81,6 +85,9 @@ export default class TeenPregnancyUSStates extends Component {
 
                             <Slider step={1} value={this.state.year} min={2003} max={2015}
                                     onChange={_.debounce(this.handleSlider, 200)}/>
+                        </div>
+                        <div class="card-action">
+                            <a onClick={this.moveDown.bind(this)}>Are there differences among ethnicities?</a>
                         </div>
                     </div>
                     <div class="card-reveal">

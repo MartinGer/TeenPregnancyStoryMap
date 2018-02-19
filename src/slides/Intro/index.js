@@ -25,12 +25,12 @@ export default class Intro extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="section no-pad-bot">
+                    <div class="containerPadding section no-pad-bot">
                         <h3 class="center">&nbsp;</h3>
                     </div>
 
                     <div class="row center">
-                        <div class="card intro sticky-action col s3">
+                        <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                             <div class="card-content left-align">
@@ -47,12 +47,12 @@ export default class Intro extends Component {
                                 <span class="card-title grey-text text-darken-4">Education
                                     <i class="material-icons right">close</i>
                                 </span>
-                                <p><a href="http://www.ncsl.org/research/health/teen-pregnancy-affects-graduation-rates-postcard.aspx">Source </a>
+                                <p><a href="http://www.ncsl.org/research/health/teen-pregnancy-affects-graduation-rates-postcard.aspx">Source </a><br></br>
                                 National Conference of State Legislature: Teen Pregnancy affects Graduation rates Jun 17, 2013</p>
                             </div>
                         </div>
 
-                        <div class="card intro sticky-action col s3">
+                        <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                             <div class="card-content left-align">
@@ -72,12 +72,12 @@ export default class Intro extends Component {
                                 <span class="card-title grey-text text-darken-4">Health
                                     <i class="material-icons right">close</i>
                                 </span>
-                                <p><a href="http://www.momjunction.com/articles/health-risks-of-teenage-pregnancy_00377831/#gref">Source </a>
+                                <p><a href="http://www.momjunction.com/articles/health-risks-of-teenage-pregnancy_00377831/#gref">Source </a><br></br>
                                 9 Health Risks and Realities Of Teenage Pregnancy by Debolina Raja Feb 12, 2017</p>
                             </div>
                         </div>
 
-                        <div class="card intro sticky-action col s3">
+                        <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                             <div class="card-content left-align">
@@ -95,12 +95,12 @@ export default class Intro extends Component {
                                 <span class="card-title grey-text text-darken-4">Finance
                                     <i class="material-icons right">close</i>
                                 </span>
-                                <p><a href="http://www.onlymyhealth.com/financial-problems-teenage-pregnancy-1345312849">Source </a>
+                                <p><a href="http://www.onlymyhealth.com/financial-problems-teenage-pregnancy-1345312849">Source </a><br></br>
                                 Onlymyhealth: Financial Problems of Teenage Pregnancy by Bhadra Kamalasanan Aug 18, 2012</p>
                             </div>
                         </div>
 
-                        <div class="card intro sticky-action col s3">
+                        <div class="card sticky-action col s3">
                             <div class="card-image waves-effect waves-block waves-light">
                             </div>
                             <div class="card-content left-align">
@@ -119,7 +119,7 @@ export default class Intro extends Component {
                                 <span class="card-title grey-text text-darken-4">Social Life
                                     <i class="material-icons right">close</i>
                                 </span>
-                                <p><a href="https://books.google.ca/books?id=oQgvAAAAQBAJ&dq=parent+child+relations+3rd+edition&hl=en&sa=X&ei=85bZVMO5EIbnoATGqIKgCQ&ved=0CDEQ6AEwAA">Source </a>
+                                <p><a href="https://books.google.ca/books?id=oQgvAAAAQBAJ&dq=parent+child+relations+3rd+edition&hl=en&sa=X&ei=85bZVMO5EIbnoATGqIKgCQ&ved=0CDEQ6AEwAA">Source </a><br></br>
                                 Parent-Child Relations, Pearson Education, Feb 02, 2012</p>
                             </div>
                         </div>

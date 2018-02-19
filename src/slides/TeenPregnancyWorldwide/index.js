@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2';
 import './index.css'
+import 'chartjs-plugin-annotation'
+import {ScrollContainer} from "../../components/OnePageScroll";
 
 export default class TeenPregnancyUSWorldwide extends Component {
     constructor(props) {
@@ -33,7 +35,11 @@ export default class TeenPregnancyUSWorldwide extends Component {
                         scaleID: 'x-axis-0',
                         value: 2007,
                         borderColor: 'black',
-                        borderWidth: 30
+                        borderWidth: 3,
+                        label: {
+                          content: "What happened here?",
+                          enabled: true
+                        }
                     }]
                 }
         };
@@ -81,6 +87,10 @@ export default class TeenPregnancyUSWorldwide extends Component {
         })
     }
 
+    moveDown() {
+      this.props.scrollContainer.moveDown()
+    }
+
     render() {
         return (
             <div>
@@ -110,7 +120,7 @@ export default class TeenPregnancyUSWorldwide extends Component {
                                         up in 2007. We want to investigate what changed.
                                     </p>
                                     <div class="card-action">
-                                        <a>What happend in 2007?</a>
+                                        <a onClick={this.moveDown.bind(this)}>What happened in 2007?</a>
                                     </div>
                                 </div>
                                 <div class="card-reveal">
