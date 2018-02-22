@@ -8,3 +8,8 @@
 .cardOutlook {
       margin-top: 33%;
 }
+
+.card-overflow {
+    max-height: 60vh;
+    overflow: scroll;
+}
