@@ -1,0 +1,10 @@
+.trump {
+    background-image: url("washington.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.cardOutlook {
+      margin-top: 33%;
+}

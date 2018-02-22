@@ -1,0 +1,17 @@
+.Headline {
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.textHeader {
+    position: absolute;
+    top: 50%;
+}
+
+.source {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
