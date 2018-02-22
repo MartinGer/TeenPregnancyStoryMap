@@ -7,6 +7,7 @@ import Headline from './slides/Headline'
 import Intro from './slides/Intro'
 import FundingChart from './slides/FundingChart'
 import FundingOnStateLevel from './slides/FundingOnStateLevel'
+import Explanation from "./slides/Explanation";
 import Outlook from './slides/Outlook'
 import {ScrollContainer, ScrollSection} from "./components/OnePageScroll";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -70,6 +71,11 @@ class App extends Component {
                         </ScrollSection>
 
                         <ScrollSection pageId={8}>
+                            <div className='full-height yellow-background'>
+                                <Explanation/>
+                            </div>
+                        </ScrollSection>
+                        <ScrollSection pageId={9}>
                             <div className='full-height yellow-background'>
                                 <Outlook/>
                             </div>
