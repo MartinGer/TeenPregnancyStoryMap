@@ -30,6 +30,9 @@ export default class Outlook extends Component {
                                         Department of Health and Human Services. This might have an impact on the correct usage and access to contraception
                                         and therefore could impact the teenage pregnancy rate in the years to come.
                                     </p>
+                                    <p class="section">
+                                        <i>A story map by Martin Gerstmaier, Philipp Hager, Sven Lehmann, Hung Nguyen</i>
+                                    </p>
                                 </div>
 
                                 <div class="card-reveal">
